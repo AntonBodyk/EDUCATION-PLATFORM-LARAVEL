@@ -15,6 +15,7 @@ RUN pecl install redis \
 
 # Копирование Composer из официального образа
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY php/php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /var/www
 

@@ -1,0 +1,66 @@
+.navbar{
+    display: flex;
+}
+.nav-item a{
+    color: white;
+}
+.nav-item a:first-child{
+    margin-left: 100px;
+}
+.nav-item a:last-child{
+    margin-right: 150px;
+}
+.nav-item a:hover{
+    color: yellow;
+}
+.nav-item a:focus{
+    color: yellow;
+}
+.container {
+    background-color: #f8f9fa;
+    padding: 20px 0 0 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 150px;
+}
+
+.user-title{
+    margin: 100px 0 20px 36%;
+}
+.fa-pen{
+    margin-left: 50px;
+    cursor: pointer;
+}
+.fa-user-xmark{
+    margin-left: 50px;
+    cursor: pointer;
+}
+.nav-item{
+    display: flex;
+}
+
+.fa-user-plus{
+    color: white;
+    cursor: pointer;
+    padding-top: 13px;
+    text-decoration: none;
+}
+.fa-plus{
+    color: white;
+    cursor: pointer;
+    padding-top: 14px;
+    text-decoration: none;
+}
+
+.create-user{
+    margin: 30px 0 0 29%;
+}
+.new-user{
+    width: 700px;
+    margin: 20px 0 0 25%;
+}
+.new-user-btn{
+    width: 200px;
+    height: 50px;
+    margin-left: 37%;
+}
