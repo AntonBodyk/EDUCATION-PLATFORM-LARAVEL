@@ -31,19 +31,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-//        $new_user = User::create($request->except('avatar'));
+        $new_user = User::create($request->except('avatar'));
 
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
-
+//            dd($avatar);
             // Сохранение файла и получение его пути
             $path = $avatar->store('avatars');
+//            dd($path);
 
-            // Теперь $filePath содержит полный путь к сохраненному файлу
-            dd($path);
+//            $new_user->update(['avatar' => $path]);
         }
 
-//        return redirect()->route('users.index');
+        return redirect()->route('users.index');
     }
 
     /**
