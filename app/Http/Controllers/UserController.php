@@ -29,6 +29,26 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+//    public function store(Request $request)
+//    {
+//       $new_user = User::create($request->all());
+//
+//        if ($request->hasFile('avatar')) {
+//            $avatar = $request->file('avatar');
+//
+//            // Сохранение файла и получение его пути
+//            $path = $avatar->store('avatars');
+//            $filePath = Storage::path($path);
+//
+//            // Теперь $filePath содержит полный путь к сохраненному файлу
+////            dd($filePath);
+////            dump($path);
+////            dd($filePath);
+////            $new_user->update('avatar', $filePath);
+//        }
+//
+//        return redirect()->route('users.index');
+//    }
     public function store(Request $request)
     {
         $new_user = User::create($request->except('avatar'));
@@ -40,7 +60,7 @@ class UserController extends Controller
             $path = $avatar->store('avatars');
 //            dd($path);
 
-//            $new_user->update(['avatar' => $path]);
+            $new_user->update(['avatar' => $path]);
         }
 
         return redirect()->route('users.index');
@@ -65,11 +85,19 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $user)
+    public function update(Request $request, User $user)
     {
-        User::findOrFail($user)->update($request->all());
+        $data = $request->except('_token', '_method');
+
+        if ($request->hasFile('avatar')) {
+            $data['avatar'] = $request->file('avatar')->store('avatars');
+        }
+
+        $user->update($data);
+
         return redirect()->route('users.index');
     }
+
 
     /**
      * Remove the specified resource from storage.

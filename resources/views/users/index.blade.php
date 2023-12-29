@@ -5,6 +5,7 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th>Avatar</th>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
@@ -15,6 +16,7 @@
         @foreach($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
+                <td>{{$user->avatar}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->role}}</td>
@@ -34,6 +36,11 @@
                             <form action="{{route('users.update', ['user' => $user->id])}}" method="POST">
                                 @csrf
                                 @method('PATCH')
+                                <div class="mb-3">
+                                    <label for="exampleInputName1" class="form-label">Фото</label>
+                                    <input type="file" class="form-control" id="exampleInputName1" name="avatar" value="{{$user->avatar}}" required>
+                                    <div class="invalid-feedback"></div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="exampleInputName1" class="form-label">Ім'я</label>
                                     <input type="text" class="form-control" id="exampleInputName1" name="name" value="{{$user->name}}" required>
