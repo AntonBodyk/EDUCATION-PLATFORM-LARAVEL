@@ -38,29 +38,39 @@
                                 @method('PATCH')
                                 <div class="mb-3">
                                     <label for="exampleInputName1" class="form-label">Фото</label>
-                                    <input type="file" class="form-control" id="exampleInputName1" name="avatar" value="{{$user->avatar}}" required>
-                                    <div class="invalid-feedback"></div>
+                                    <input type="file" class="form-control" id="exampleInputName1" name="avatar" value="{{$user->avatar}}">
                                 </div>
+                                @error('avatar')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="mb-3">
                                     <label for="exampleInputName1" class="form-label">Ім'я</label>
-                                    <input type="text" class="form-control" id="exampleInputName1" name="name" value="{{$user->name}}" required>
-                                    <div class="invalid-feedback"></div>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputName1" name="name" value="{{$user->name}}">
                                 </div>
+                                @error('name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" value="{{$user->email}}" required>
-                                    <div class="invalid-feedback"></div>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" value="{{$user->email}}">
                                 </div>
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" value="{{$user->password}}" required>
-                                    <div class="invalid-feedback"></div>
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" value="{{$user->password}}">
                                 </div>
+                                @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="mb-3">
                                     <label for="exampleInputRole1" class="form-label">Роль</label>
-                                    <input type="text" class="form-control" name="role" id="exampleInputRole1" value="{{$user->role}}" required>
-                                    <div class="invalid-feedback"></div>
+                                    <input type="text" class="form-control" name="role" id="exampleInputRole1" value="{{$user->role}}">
                                 </div>
+                                @error('role')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <button type="submit" class="btn btn-primary confirm-update-btn">Оновити</button>
                             </form>
                         </div>
@@ -91,6 +101,6 @@
     </table>
 
     <div class="d-flex justify-content-center">
-        {{ $users->links('pagination::bootstrap-5') }}
+        {{ $users->links() }}
     </div>
 @endsection
