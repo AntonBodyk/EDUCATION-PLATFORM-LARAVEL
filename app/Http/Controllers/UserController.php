@@ -67,13 +67,13 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
-        $data = $request->except('_token', '_method');
-
         if ($request->hasFile('avatar')) {
-            $data['avatar'] = $request->file('avatar')->store('avatars');
-        }
+            $avatar = $request->file('avatar');
 
-        $user->update($data);
+            $path = $avatar->store('avatars');
+
+            $user->update(['avatar' => $path]);
+        }
 
         return redirect()->route('users.index');
     }

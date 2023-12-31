@@ -31,9 +31,9 @@
         @error('password')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <div class="mb-3">
+        <div class="mb-3 ">
             <label for="exampleInputRole1" class="form-label">Роль</label>
-            <input name="role" type="text" class="form-control @error('role') is-invalid @enderror" id="exampleInputRole1" value="{{ old('title') }}">
+            <input name="role" type="text" class="form-control dropdown-toggle @error('role') is-invalid @enderror" id="exampleInputRole1" value="{{ old('title') }}">
         </div>
         @error('role')
             <div class="alert alert-danger">{{ $message }}</div>
