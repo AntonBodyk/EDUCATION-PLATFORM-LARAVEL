@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use function Symfony\Component\String\u;
 
 class UserController extends Controller
 {
@@ -22,9 +23,10 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): object
     {
-        return view('users.create');
+        $roles = User::distinct()->pluck('role');
+        return view('users.create', ['roles' => $roles]);
     }
 
     /**
@@ -67,14 +69,16 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
+        $data = $request->except('avatar');
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
 
             $path = $avatar->store('avatars');
 
-            $user->update(['avatar' => $path]);
+            $data['avatar'] = $path;
         }
 
+        $user->update($data);
         return redirect()->route('users.index');
     }
 

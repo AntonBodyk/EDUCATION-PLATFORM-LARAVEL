@@ -22,7 +22,7 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'avatar' => 'required',
+            'avatar' => 'required|image:jpg,jpeg,png',
             'name'=> 'required|min:3|max:100',
             'email'=> 'required|min:3|max:100',
             'password'=>'required|min:3|max:100',

@@ -31,9 +31,14 @@
         @error('password')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <div class="mb-3 ">
+        <div class="mb-3">
             <label for="exampleInputRole1" class="form-label">Роль</label>
-            <input name="role" type="text" class="form-control dropdown-toggle @error('role') is-invalid @enderror" id="exampleInputRole1" value="{{ old('title') }}">
+            <select name="role" class="form-select @error('role') is-invalid @enderror" id="exampleInputRole1">
+                <option value="" selected disabled>Виберіть роль</option>
+                @foreach($roles as $role)
+                    <option value="{{ $role }}" {{ old('role') == $role ? 'selected' : '' }}>{{ $role }}</option>
+                @endforeach
+            </select>
         </div>
         @error('role')
             <div class="alert alert-danger">{{ $message }}</div>
