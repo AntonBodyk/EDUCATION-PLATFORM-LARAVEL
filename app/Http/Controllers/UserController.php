@@ -14,9 +14,12 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): object
+    public function index(Request $request): object
     {
         $users = User::paginate(50);
+        if($request->input('page') > $users->lastPage()){
+            abort(404);
+        }
         return view('users.index', ['users' => $users]);
     }
 
@@ -59,9 +62,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): object
     {
-        //
+        $user = User::findOrFail($id);
+        return view('users.edit', ['user'=> $user]);
     }
 
     /**
