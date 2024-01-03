@@ -118,3 +118,11 @@
     color: white;
     margin-left: 37%;
 }
+.fa-file-arrow-down{
+    text-decoration: none;
+    color: white;
+}
+.fa-file-arrow-down:hover{
+    color: white;
+    cursor: pointer;
+}

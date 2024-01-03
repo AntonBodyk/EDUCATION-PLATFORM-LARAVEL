@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
 });
 
 
-
+Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users');
 Route::view('/admin', 'admin')->name('admin');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');

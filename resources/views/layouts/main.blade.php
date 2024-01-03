@@ -29,6 +29,9 @@
                     <a class="nav-link" href="#">Курси</a>
                     <a class="fa-solid fa-plus"></a>
                 </li>
+                <li class="nav-item">
+                    <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
+                </li>
             </ul>
         </div>
     </nav>
