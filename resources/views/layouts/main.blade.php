@@ -31,6 +31,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
+                    <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
                 </li>
             </ul>
         </div>

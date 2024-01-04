@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExportController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ExelMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +18,14 @@ use App\Http\Controllers\ExportController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    Mail::to('fortests1515@gmail.com')->send(new ExelMail());
 });
 
 
 Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users');
+
+Route::view('/email', 'email.users_email')->name('users-email');
 Route::view('/admin', 'admin')->name('admin');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');

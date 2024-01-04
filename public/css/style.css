@@ -126,3 +126,20 @@
     color: white;
     cursor: pointer;
 }
+.fa-envelope{
+    text-decoration: none;
+    margin-left: 20px;
+    width: 30px;
+    height: 20px;
+    color: white;
+}
+.send-email{
+    width: 700px;
+    margin: 150px 0 0 27%;
+}
+.send-email-btn{
+    width: 200px;
+    height: 50px;
+    color: white;
+    margin-left: 37%;
+}
