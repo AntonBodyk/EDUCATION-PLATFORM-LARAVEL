@@ -22,7 +22,7 @@ class EmailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'report' => 'required|file|mimes:xlsx',
+            'report' => 'required|mimes:xlsx',
             'email' => 'required',
         ];
     }

@@ -13,22 +13,29 @@ class ExelMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Build the message.
-     */
-
-    public function build()
-    {
-        return view('email.mail_sample');
-    }
+    public $pathToFile;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($pathToFile)
     {
-        //
+        $this->pathToFile = $pathToFile;
     }
 
+    public function build()
+    {
+        if (file_exists($this->pathToFile)) {
+            // Прикрепляем файл к письму
+            return $this->view('email.mail_sample')
+                ->attach($this->pathToFile, [
+                    'as' => 'export.xlsx',
+                    'mime' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                ])
+                ->subject('Excel Export');
+        } else {
+            return $this->view('email.mail_sample')->subject('Excel Export');
+        }
+    }
 
     /**
      * Get the message envelope.
@@ -40,6 +47,15 @@ class ExelMail extends Mailable
         );
     }
 
+    /**
+     * Get the message content definition.
+     */
+    public function content(): Content
+    {
+        return new Content(
+            view: 'email.mail_sample',
+        );
+    }
 
     /**
      * Get the attachments for the message.
@@ -48,6 +64,9 @@ class ExelMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+
+        ];
+
     }
 }

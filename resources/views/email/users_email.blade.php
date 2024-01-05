@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <form action="{{ route('email.sendEmail') }}" method="post" class="send-email" enctype="multipart/form-data">
+    <form action="{{ route('send-email') }}" method="post" class="send-email" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Отчет</label>
