@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
             'name'=> 'required|min:3|max:100',
             'email'=> 'required|min:3|max:100',
             'password'=>'required|min:3|max:100',
-            'role'=>'required|min:3|max:100'
+            'role_id' => 'required',
         ];
     }
 
@@ -37,12 +37,10 @@ class UserRequest extends FormRequest
             'name.required' => 'Заповніть поле',
             'email.required' => 'Заповніть поле',
             'password.required' => 'Заповніть поле',
-            'role.required' => 'Заповніть поле',
-//            'avatar.required' => 'Файл не вибрано',
+            'role_id.required' => 'Заповніть поле',
             'name.min' => 'Введіть мінімум 3 символи',
             'email.min' => 'Введіть мінімум 3 символи',
             'password.min' => 'Введіть мінімум 3 символи',
-            'role.min' => 'Введіть мінімум 3 символи',
         ];
     }
 }

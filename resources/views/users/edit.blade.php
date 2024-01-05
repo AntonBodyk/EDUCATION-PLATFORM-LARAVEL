@@ -37,13 +37,15 @@
             @enderror
             <div class="mb-3">
                 <label for="exampleInputRole1" class="form-label">Роль</label>
-                <select class="form-select @error('role') is-invalid @enderror" name="role" id="exampleInputRole1">
-                    <option value="teacher" {{ $user->role === 'teacher' ? 'selected' : '' }}>Вчитель</option>
-                    <option value="student" {{ $user->role === 'student' ? 'selected' : '' }}>Учень</option>
-                    <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Адміністратор</option>
+                <select class="form-select @error('role_id') is-invalid @enderror" name="role_id" id="exampleInputRole1">
+                    @foreach ($roles as $role)
+                        <option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected' : '' }}>
+                            {{ $role->role_name }}
+                        </option>
+                    @endforeach
                 </select>
             </div>
-            @error('role')
+            @error('role_id')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <button type="submit" class="btn btn-primary update-user-btn" data-user-id="{{$user->id}}">Оновити</button>

@@ -21,7 +21,7 @@
                     <td class="td-avatar">{{$user->avatar}}</td>
                     <td class="td-name">{{$user->name}}</td>
                     <td class="td-email">{{$user->email}}</td>
-                    <td class="td-role">{{$user->role}}</td>
+                    <td class="td-role">{{$user->role_id}}</td>
                     <td class="td-password">{{$user->password}}</td>
                     <td class="td-buttons">
                         <a class="fa-solid fa-pen update-btn" href="{{route('users.edit', ['user'=> $user->id])}}" data-user-id="{{$user->id}}"></a>
@@ -59,20 +59,6 @@
         {{ $users->links() }}
     </div>
 
-{{--    <script>--}}
-{{--        document.addEventListener('DOMContentLoaded', function () {--}}
-
-{{--                    let userId = this.getAttribute('data-user-id');--}}
-{{--                    // console.log(userId);--}}
-{{--                    let updateModal = new bootstrap.Modal(document.getElementById('updateModal{{$user->id}}'));--}}
-
-{{--                    let hasErrors = document.querySelector('.modal-body[data-user-id="' + userId + '"] .alert-danger');--}}
-
-{{--                    if (hasErrors) {--}}
-{{--                        updateModal.show();--}}
-{{--                    }--}}
-{{--        });--}}
-{{--    </script>--}}
 @endsection
 
 
