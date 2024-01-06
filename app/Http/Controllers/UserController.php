@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\Calculation\Logical\Boolean;
 use function Symfony\Component\String\u;
 
 class UserController extends Controller
@@ -36,7 +37,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): object
     {
         $new_user = User::create($request->except('avatar'));
 
@@ -71,7 +72,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, User $user): object
     {
         $data = $request->except('avatar');
         if ($request->hasFile('avatar')) {
@@ -90,7 +91,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): object
     {
         User::findOrFail($id)->delete();
         return redirect()->route('users.index');

@@ -11,7 +11,7 @@ class Lesson extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
-    public function course()
+    public function course(): object
     {
         return $this->belongsTo(Course::class);
     }

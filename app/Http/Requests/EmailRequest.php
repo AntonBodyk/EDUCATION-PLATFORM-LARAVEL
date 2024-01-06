@@ -23,7 +23,16 @@ class EmailRequest extends FormRequest
     {
         return [
             'report' => 'required|mimes:xlsx',
-            'email' => 'required',
+            'email' => 'required|min:3|max:100',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'report.required' => 'Файл не вибрано',
+            'email.required' => 'Заповніть поле',
+            'email.min' => 'Введіть мінімум 3 символи',
         ];
     }
 }

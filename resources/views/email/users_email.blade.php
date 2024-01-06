@@ -4,14 +4,14 @@
         @csrf
         <div class="mb-3">
             <label for="exampleInputName1" class="form-label">Отчет</label>
-            <input type="file" class="form-control @error('report') is-invalid @enderror" id="exampleInputName1" name="report">
+            <input type="file" class="form-control @error('report') is-invalid @enderror" value="{{old('report')}}" id="exampleInputName1" name="report">
         </div>
         @error('report')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control " placeholder="Введіть електронну адресу" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" required>
+            <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" placeholder="Введіть електронну адресу" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
         </div>
         @error('email')
             <div class="alert alert-danger">{{ $message }}</div>

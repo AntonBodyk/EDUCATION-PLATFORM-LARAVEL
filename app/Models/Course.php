@@ -11,7 +11,7 @@ class Course extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
-    public function lesson()
+    public function lessons(): object
     {
         return $this->hasMany(Lesson::class);
     }

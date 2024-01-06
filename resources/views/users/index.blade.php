@@ -59,20 +59,6 @@
         {{ $users->links() }}
     </div>
 
-{{--    <script>--}}
-{{--        document.addEventListener('DOMContentLoaded', function () {--}}
-
-{{--                    let userId = this.getAttribute('data-user-id');--}}
-{{--                    // console.log(userId);--}}
-{{--                    let updateModal = new bootstrap.Modal(document.getElementById('updateModal{{$user->id}}'));--}}
-
-{{--                    let hasErrors = document.querySelector('.modal-body[data-user-id="' + userId + '"] .alert-danger');--}}
-
-{{--                    if (hasErrors) {--}}
-{{--                        updateModal.show();--}}
-{{--                    }--}}
-{{--        });--}}
-{{--    </script>--}}
 @endsection
 
 

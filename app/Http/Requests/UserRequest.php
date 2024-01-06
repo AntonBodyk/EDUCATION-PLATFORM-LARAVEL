@@ -30,7 +30,7 @@ class UserRequest extends FormRequest
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'avatar.required' => 'Файл не вибрано',
@@ -38,7 +38,6 @@ class UserRequest extends FormRequest
             'email.required' => 'Заповніть поле',
             'password.required' => 'Заповніть поле',
             'role.required' => 'Заповніть поле',
-//            'avatar.required' => 'Файл не вибрано',
             'name.min' => 'Введіть мінімум 3 символи',
             'email.min' => 'Введіть мінімум 3 символи',
             'password.min' => 'Введіть мінімум 3 символи',
