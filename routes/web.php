@@ -19,7 +19,7 @@ use App\Mail\ExelMail;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 
 });
 
@@ -28,7 +28,7 @@ Route::post('/send-email', [EmailController::class, 'sendUserEmail'])->name('sen
 Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users');
 
 Route::view('/email', 'email.users_email')->name('users-email');
-Route::view('/admin', 'admin')->name('admin');
+Route::view('/home', 'admin')->name('admin');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/create', [UserController::class, 'create'])->name('users.create');

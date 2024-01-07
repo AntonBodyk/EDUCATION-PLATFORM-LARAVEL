@@ -7,9 +7,7 @@
 .nav-item a:first-child{
     margin-left: 100px;
 }
-.nav-item a:last-child{
-    margin-right: 150px;
-}
+
 .nav-item a:hover{
     color: yellow;
 }
@@ -120,6 +118,7 @@
 }
 .fa-file-arrow-down{
     text-decoration: none;
+    margin-top: 15px;
     color: white;
 }
 .fa-file-arrow-down:hover{
@@ -128,7 +127,7 @@
 }
 .fa-envelope{
     text-decoration: none;
-    margin-left: 20px;
+    margin: 16px 0 0 20px;
     width: 30px;
     height: 20px;
     color: white;
@@ -142,4 +141,22 @@
     height: 50px;
     color: white;
     margin-left: 37%;
+}
+.fa-right-from-bracket{
+    text-decoration: none;
+    width: 30px;
+    height: 20px;
+    color: white;
+}
+.logout{
+    margin-right: 100px;
+}
+.logout-btn{
+    width: 80px;
+    height: 30px;
+    margin: 10px 0 0 30px;
+    background-color: white;
+    color: #1a202c;
+    border-radius: 5px;
+    border: none;
 }
