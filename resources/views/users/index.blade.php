@@ -9,7 +9,7 @@
                 <th>Avatar</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th>Role_Id</th>
                 <th>Password</th>
                 <th></th>
             </tr>
