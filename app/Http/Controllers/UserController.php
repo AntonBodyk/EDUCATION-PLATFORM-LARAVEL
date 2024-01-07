@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -18,6 +19,7 @@ class UserController extends Controller
     public function index(Request $request): object
     {
         $users = User::paginate(50);
+
         if($request->input('page') > $users->lastPage()){
             abort(404);
         }
@@ -29,7 +31,7 @@ class UserController extends Controller
      */
     public function create(): object
     {
-        $roles = User::distinct()->pluck('role');
+        $roles = Role::all();
         return view('users.create', ['roles' => $roles]);
     }
 
@@ -39,6 +41,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request): object
     {
+
         $new_user = User::create($request->except('avatar'));
 
         if ($request->hasFile('avatar')) {
@@ -48,6 +51,7 @@ class UserController extends Controller
 
             $new_user->update(['avatar' => $path]);
         }
+
 
         return redirect()->route('users.index');
     }
@@ -66,7 +70,8 @@ class UserController extends Controller
     public function edit(string $id): object
     {
         $user = User::findOrFail($id);
-        return view('users.edit', ['user'=> $user]);
+        $roles = Role::all();
+        return view('users.edit', ['user'=> $user], ['roles' => $roles]);
     }
 
     /**
@@ -74,14 +79,15 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user): object
     {
+
         $data = $request->except('avatar');
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
-
             $path = $avatar->store('avatars');
-
             $data['avatar'] = $path;
         }
+
+
 
         $user->update($data);
         return redirect()->route('users.index');

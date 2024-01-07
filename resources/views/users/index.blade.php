@@ -9,7 +9,7 @@
                 <th>Avatar</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th>Role_Id</th>
                 <th>Password</th>
                 <th></th>
             </tr>
@@ -21,7 +21,7 @@
                     <td class="td-avatar">{{$user->avatar}}</td>
                     <td class="td-name">{{$user->name}}</td>
                     <td class="td-email">{{$user->email}}</td>
-                    <td class="td-role">{{$user->role}}</td>
+                    <td class="td-role">{{$user->role_id}}</td>
                     <td class="td-password">{{$user->password}}</td>
                     <td class="td-buttons">
                         <a class="fa-solid fa-pen update-btn" href="{{route('users.edit', ['user'=> $user->id])}}" data-user-id="{{$user->id}}"></a>

@@ -33,14 +33,17 @@
         @enderror
         <div class="mb-3">
             <label for="exampleInputRole1" class="form-label">Роль</label>
-            <select name="role" class="form-select @error('role') is-invalid @enderror" id="exampleInputRole1" >
+
+            <select name="role_id" class="form-select @error('role_id') is-invalid @enderror" id="exampleInputRole1">
                 <option value="" selected disabled>Виберіть роль</option>
                 @foreach($roles as $role)
-                    <option value="{{ $role }}" {{ old('role') == $role ? 'selected' : '' }}>{{ $role }}</option>
+                    <option value="{{ $role->id }}" {{ $role === $role->id ? 'selected' : '' }}>
+                        {{ $role->role_name }}
+                    </option>
                 @endforeach
             </select>
         </div>
-        @error('role')
+        @error('role_id')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <button type="submit" class="btn btn-success new-user-btn">Створити</button>
