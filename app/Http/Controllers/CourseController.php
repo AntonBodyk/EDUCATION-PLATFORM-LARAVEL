@@ -70,7 +70,7 @@ class CourseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Course $course): object
+    public function update(CourseRequest $request, Course $course): object
     {
         $data = $request->except('course_img');
         if ($request->hasFile('course_img')) {
