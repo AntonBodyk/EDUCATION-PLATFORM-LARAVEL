@@ -8,7 +8,7 @@
         <input type="hidden" name="id" value="{{ $course->id }}">
         <div class="mb-3">
             <label for="exampleInputTitle1" class="form-label">Назва курсу</label>
-            <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="exampleInputTitle1" value="{{$course->title}}">
+            <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="exampleInputTitle1" value="{{old('title')}}">
         </div>
         @error('title')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -22,7 +22,7 @@
         @enderror
         <div class="mb-3">
             <label for="exampleTextAreaBody1" class="form-label">Опис курсу</label>
-            <textarea name="body" type="text" class="form-control @error('body') is-invalid @enderror" id="exampleTextAreaBody1">{{$course->body}}</textarea>
+            <textarea name="body" type="text" class="form-control @error('body') is-invalid @enderror" id="exampleTextAreaBody1">{{old('body')}}</textarea>
         </div>
         @error('body')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -30,6 +30,7 @@
         <div class="mb-3">
             <label for="exampleInputCategory1" class="form-label">Категорія курсу</label>
             <select name="category_id" class="form-select @error('category_id') is-invalid @enderror" id="exampleInputCategory1">
+                <option value="" selected disabled>Виберіть категорію</option>
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}" {{ $category === $category->id ? 'selected' : '' }}>
                         {{ $category->category_name }}

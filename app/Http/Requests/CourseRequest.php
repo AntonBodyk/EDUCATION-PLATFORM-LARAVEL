@@ -22,9 +22,9 @@ class CourseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][a-zA-Zа-яА-Я0-9\s]+$/u',
+            'title'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s, -]+$/u',
             'course_img' => 'required|image:jpg,jpeg,png',
-            'body'=> 'required|min:3|max:500|regex:/^[A-ZА-Я][a-zA-Zа-яА-Я0-9\s]+$/u',
+            'body'=> 'required|min:3|max:500|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s, -]+$/u',
             'category_id' => 'required',
         ];
     }

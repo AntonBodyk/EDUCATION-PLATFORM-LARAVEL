@@ -9,7 +9,6 @@
                 <th>Title</th>
                 <th>Course_Img</th>
                 <th>Body</th>
-                <th>Teacher_Id</th>
                 <th>Category_id</th>
                 <th></th>
             </tr>
@@ -21,7 +20,6 @@
                     <td class="td-avatar">{{$course->title}}</td>
                     <td class="td-name">{{$course->course_img}}</td>
                     <td class="td-email">{{$course->body}}</td>
-                    <td class="td-role">{{$course->teacher_id}}</td>
                     <td class="td-role">{{$course->category_id}}</td>
                     <td class="td-buttons">
                         <a class="fa-solid fa-pen update-btn" href="{{route('courses.edit', ['course'=> $course->id])}}" data-user-id="{{$course->id}}"></a>
