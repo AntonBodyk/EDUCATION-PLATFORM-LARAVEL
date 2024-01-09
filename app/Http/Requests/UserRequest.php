@@ -23,9 +23,9 @@ class UserRequest extends FormRequest
     {
         return [
             'avatar' => 'required|image:jpg,jpeg,png',
-            'name'=> 'required|min:3|max:100',
+            'name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
             'email'=> 'required|min:3|max:100',
-            'password'=>'required|min:3|max:100',
+            'password'=>'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
             'role_id' => 'required',
         ];
     }
@@ -41,6 +41,8 @@ class UserRequest extends FormRequest
             'name.min' => 'Введіть мінімум 3 символи',
             'email.min' => 'Введіть мінімум 3 символи',
             'password.min' => 'Введіть мінімум 3 символи',
+            'name.regex'=>"Ім'я повинно починатися з великої літери",
+            'password.regex'=>"Пароль повинен починатися з великої літери"
         ];
     }
 }
