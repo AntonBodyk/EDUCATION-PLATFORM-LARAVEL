@@ -11,4 +11,9 @@ class LessonComment extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function user(): object
+    {
+        return $this->belongsTo(User::class);
+    }
 }

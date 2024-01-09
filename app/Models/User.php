@@ -29,13 +29,16 @@ class User extends Authenticatable
         return $this->hasMany(Course::class, 'teacher_id', 'id');
     }
 
-
+    public function lessons(): object
+    {
+        return $this->hasMany(Lesson::class, 'teacher_id', 'id');
+    }
     /**
      * Получаю роль пользователя.
      */
     public function role(): object
     {
-        return $this->belongsTo(Role::class, 'id');
+        return $this->belongsTo(Role::class);
     }
 
     /**

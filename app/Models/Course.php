@@ -15,4 +15,13 @@ class Course extends Model
     {
         return $this->hasMany(Lesson::class, 'course_id', 'id');
     }
+    public function category(): object
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user(): object
+    {
+        return $this->belongsTo(User::class);
+    }
 }
