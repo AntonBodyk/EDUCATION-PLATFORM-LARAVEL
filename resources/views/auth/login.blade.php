@@ -18,11 +18,25 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Ел.адреса</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" name="email" value="{{old('email')}}">
             </div>
+            @error('email')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                <input type="password" class="form-control @error('email') is-invalid @enderror" id="exampleInputPassword1" name="password" value="{{old('password')}}">
+            </div>
+            @error('password')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" {{old('remember') ? 'checked' : ''}} id="remember" name="remember">
+                    <label class="form-check-label" for="remember">
+                        {{__("Запам'ятати мене")}}
+                    </label>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary sign-btn">Війти</button>
         </form>
