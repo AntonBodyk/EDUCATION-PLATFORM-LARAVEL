@@ -62,7 +62,21 @@
     height: 50px;
     margin-left: 37%;
 }
+.th-link-name{
+    text-decoration: none;
+    color: black;
+}
+.th-link-name:hover{
+    color: black;
+}
 
+.th-link-email{
+    text-decoration: none;
+    color: black;
+}
+.th-link-email:hover{
+    color: black;
+}
 .td-avatar{
     max-width: 100px;
     overflow: hidden;
@@ -86,6 +100,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.td-role-link{
+    text-decoration: none;
+    color: black;
+}
+.td-role-link:hover{
+    color: black;
 }
 .td-password{
     max-width: 50px;
@@ -187,4 +208,8 @@
 
 .nav-login{
     margin-right: 80px;
+}
+.hello-user{
+    color: white;
+    margin-top: 8px;
 }

@@ -12,7 +12,7 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(Request $request): object
     {
         $courses = Course::paginate(50);
         if($request->input('page') > $courses->lastPage()){
@@ -60,9 +60,8 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): object
+    public function edit(Course $course): object
     {
-        $course = Course::findOrFail($id);
         $categories = Category::all();
         return view('courses.edit', ['course'=> $course], ['categories'=> $categories]);
     }
@@ -88,9 +87,9 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): object
+    public function destroy(Course $course): object
     {
-        Course::findOrFail($id)->delete();
+        $course->delete();
         return redirect()->route('courses.index');
     }
 }

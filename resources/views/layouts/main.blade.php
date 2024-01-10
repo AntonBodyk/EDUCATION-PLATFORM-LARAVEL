@@ -40,6 +40,9 @@
                         <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
                     </li>
                     <li class="nav-item">
+                        <span class="hello-user">Доброго дня, {{auth()->user()->name}}!</span>
+                    </li>
+                    <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}" class="logout">
                             @csrf
                             <button type="submit" class="logout-btn">Вихід</button>

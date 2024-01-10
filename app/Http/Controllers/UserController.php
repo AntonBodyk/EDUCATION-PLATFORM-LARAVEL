@@ -18,12 +18,34 @@ class UserController extends Controller
      */
     public function index(Request $request): object
     {
-        $users = User::paginate(50);
+        // Получите параметры сортировки из запроса
+        $sortColumn = $request->get('sortColumn', 'name');
+        $sortDirection = $request->get('sortDirection', 'asc');
 
-        if($request->input('page') > $users->lastPage()){
+        $validColumns = ['id', 'name', 'email', 'role'];
+        if (!in_array($sortColumn, $validColumns)) {
+            $sortColumn = 'name';
+        }
+
+        // Получите запрос на пользователей, отсортированных и разбитых по страницам
+        $usersQuery = User::orderBy($sortColumn, $sortDirection);
+
+        // Примените фильтр по роли, если он установлен
+        if ($request->filled('roleFilter')) {
+            $usersQuery->whereHas('role', function ($query) use ($request) {
+                $query->where('role_name', $request->input('roleFilter'));
+            });
+        }
+
+        // Получите пользователей, отсортированных и разбитых по страницам
+        $users = $usersQuery->paginate(50);
+
+        // Проверьте, допустимы ли значения номера страницы
+        if ($request->input('page') > $users->lastPage()) {
             abort(404);
         }
-        return view('users.index', ['users' => $users]);
+
+        return view('users.index', compact('users', 'sortColumn', 'sortDirection'));
     }
 
     /**
@@ -67,9 +89,8 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): object
+    public function edit(User $user): object
     {
-        $user = User::findOrFail($id);
         $roles = Role::all();
         return view('users.edit', ['user'=> $user], ['roles' => $roles]);
     }
@@ -97,9 +118,9 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): object
+    public function destroy(User $user): object
     {
-        User::findOrFail($id)->delete();
+        $user->delete();
         return redirect()->route('users.index');
     }
 }

@@ -33,14 +33,18 @@ class UserRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'avatar.required' => 'Файл не вибрано',
+            'avatar.required' => 'Заповніть поле',
+//            'avatar.image' => 'Не вірний тип файлу, додайте файл типу:jpg,jpeg,png',
             'name.required' => 'Заповніть поле',
             'email.required' => 'Заповніть поле',
             'password.required' => 'Заповніть поле',
             'role_id.required' => 'Заповніть поле',
             'name.min' => 'Введіть мінімум 3 символи',
+            'name.max' => 'Максимум 100 символів',
             'email.min' => 'Введіть мінімум 3 символи',
+            'email.max' => 'Максимум 100 символів',
             'password.min' => 'Введіть мінімум 3 символи',
+            'password.max' => 'Максимум 100 символів',
             'name.regex'=>"Ім'я повинно починатися з великої літери",
             'password.regex'=>"Пароль повинен починатися з великої літери"
         ];
