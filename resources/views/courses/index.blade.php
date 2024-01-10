@@ -5,22 +5,36 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Course_Img</th>
-                <th>Body</th>
-                <th>Category_id</th>
+                <th>
+                    <a class="th-link-id" href="{{ route('courses.index', ['sortColumn' => 'id', 'sortDirection' => $sortColumn === 'id' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
+                        Id
+                    </a>
+                </th>
+                <th>
+                    <a class="th-link-title" href="{{ route('courses.index', ['sortColumn' => 'title', 'sortDirection' => $sortColumn === 'title' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
+                        Title
+                    </a>
+                </th>
+                <th>
+                    <a class="th-link-body" href="{{ route('courses.index', ['sortColumn' => 'body', 'sortDirection' => $sortColumn === 'body' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
+                        Body
+                    </a>
+                </th>
+                <th>Category</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach($courses as $course)
-                <tr class="tr-users">
+                <tr class="tr-courses">
                     <td class="td-id">{{$course->id}}</td>
                     <td class="td-avatar">{{$course->title}}</td>
-                    <td class="td-name">{{$course->course_img}}</td>
                     <td class="td-email">{{$course->body}}</td>
-                    <td class="td-role">{{$course->category_id}}</td>
+                    <td class="td-role">
+                        <a class="td-role-link" href="{{ route('courses.index', ['categoryFilter' => $course->category->category_name]) }}">
+                            {{$course->category->category_name}}
+                        </a>
+                    </td>
                     <td class="td-buttons">
                         <a class="fa-solid fa-pen update-btn" href="{{route('courses.edit', ['course'=> $course->id])}}" data-user-id="{{$course->id}}"></a>
                         <i class="fa-solid fa-trash delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal{{$course->id}}"></i>
@@ -54,7 +68,7 @@
 
 
     <div class="d-flex justify-content-center">
-        {{ $courses->links() }}
+        {{ $courses->appends(request()->query())->links() }}
     </div>
 
 @endsection

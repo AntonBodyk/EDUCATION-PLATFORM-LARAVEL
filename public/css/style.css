@@ -77,6 +77,27 @@
 .th-link-email:hover{
     color: black;
 }
+.th-link-id{
+    text-decoration: none;
+    color: black;
+}
+.th-link-id:hover{
+    color: black;
+}
+.th-link-title{
+    text-decoration: none;
+    color: black;
+}
+.th-link-title:hover{
+    color: black;
+}
+.th-link-body{
+    text-decoration: none;
+    color: black;
+}
+.th-link-body:hover{
+    color: black;
+}
 .td-avatar{
     max-width: 100px;
     overflow: hidden;

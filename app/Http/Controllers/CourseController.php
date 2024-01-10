@@ -14,11 +14,34 @@ class CourseController extends Controller
      */
     public function index(Request $request): object
     {
-        $courses = Course::paginate(50);
-        if($request->input('page') > $courses->lastPage()){
+        // Получите параметры сортировки из запроса
+        $sortColumn = $request->get('sortColumn', 'title');
+        $sortDirection = $request->get('sortDirection', 'asc');
+
+        $validColumns = ['id', 'title', 'body', 'category'];
+        if (!in_array($sortColumn, $validColumns)) {
+            $sortColumn = 'title';
+        }
+
+        // Получите запрос на курсы, отсортированных и разбитых по страницам
+        $coursesQuery = Course::orderBy($sortColumn, $sortDirection);
+
+        // Примените фильтр по категориям, если он установлен
+        if ($request->filled('categoryFilter')) {
+            $coursesQuery->whereHas('category', function ($query) use ($request) {
+                $query->where('category_name', $request->input('categoryFilter'));
+            });
+        }
+
+        // Получите курсы, отсортированных и разбитых по страницам
+        $courses = $coursesQuery->paginate(50);
+
+        // Проверьте, допустимы ли значения номера страницы
+        if ($request->input('page') > $courses->lastPage()) {
             abort(404);
         }
-        return view('courses.index', ['courses'=> $courses]);
+
+        return view('courses.index', compact('courses', 'sortColumn', 'sortDirection'));
     }
 
     /**
