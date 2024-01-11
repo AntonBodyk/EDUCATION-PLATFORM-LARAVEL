@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
+
+use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,7 +21,7 @@ class UserController extends Controller
     public function index(Request $request): object
     {
         // Получите параметры сортировки из запроса
-        $sortColumn = $request->get('sortColumn', 'name');
+        $sortColumn = $request->get('sortColumn', 'id');
         $sortDirection = $request->get('sortDirection', 'asc');
 
         $validColumns = ['id', 'name', 'email', 'role'];
@@ -61,7 +63,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(UserRequest $request): object
+    public function store(CreateUserRequest $request): object
     {
 
         $new_user = User::create($request->except('avatar'));
@@ -98,18 +100,9 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, User $user): object
+    public function update(UpdateUserRequest $request, User $user): object
     {
-
-        $data = $request->except('avatar');
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $path = $avatar->store('avatars');
-            $data['avatar'] = $path;
-        }
-
-
-
+        $data = $request->all();
         $user->update($data);
         return redirect()->route('users.index');
     }

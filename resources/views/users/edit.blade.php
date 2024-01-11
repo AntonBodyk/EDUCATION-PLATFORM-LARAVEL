@@ -8,13 +8,6 @@
 
             <input type="hidden" name="user_id" value="{{ $user->id }}">
             <div class="mb-3">
-                <label for="exampleInputName1" class="form-label">Фото</label>
-                <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="exampleInputName1" name="avatar" value="{{old('avatar', $user->avatar)}}">
-            </div>
-            @error('avatar')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-            <div class="mb-3">
                 <label for="exampleInputName1" class="form-label">Ім'я</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputName1" name="name" value="{{old('name', $user->name)}}">
             </div>
@@ -31,7 +24,6 @@
             <div class="mb-3">
                 <label for="exampleInputRole1" class="form-label">Роль</label>
                 <select class="form-select @error('role_id') is-invalid @enderror" name="role_id" id="exampleInputRole1">
-{{--                    <option value="" selected disabled>Виберіть категорію</option>--}}
                     @foreach ($roles as $role)
                         <option value="{{ $role->id }}"  {{old('role_id', $user->role_id) == $role->id ? 'selected' : '' }}>
                             {{ $role->role_name }}
