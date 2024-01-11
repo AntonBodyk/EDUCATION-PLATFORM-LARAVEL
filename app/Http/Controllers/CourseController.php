@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CourseRequest;
+
+use App\Http\Requests\CreateCourseRequest;
+use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -14,8 +18,8 @@ class CourseController extends Controller
      */
     public function index(Request $request): object
     {
-        // Получите параметры сортировки из запроса
-        $sortColumn = $request->get('sortColumn', 'title');
+
+        $sortColumn = $request->get('sortColumn', 'id');
         $sortDirection = $request->get('sortDirection', 'asc');
 
         $validColumns = ['id', 'title', 'body', 'category'];
@@ -23,20 +27,17 @@ class CourseController extends Controller
             $sortColumn = 'title';
         }
 
-        // Получите запрос на курсы, отсортированных и разбитых по страницам
         $coursesQuery = Course::orderBy($sortColumn, $sortDirection);
 
-        // Примените фильтр по категориям, если он установлен
         if ($request->filled('categoryFilter')) {
             $coursesQuery->whereHas('category', function ($query) use ($request) {
                 $query->where('category_name', $request->input('categoryFilter'));
             });
         }
 
-        // Получите курсы, отсортированных и разбитых по страницам
+
         $courses = $coursesQuery->paginate(50);
 
-        // Проверьте, допустимы ли значения номера страницы
         if ($request->input('page') > $courses->lastPage()) {
             abort(404);
         }
@@ -56,16 +57,19 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CourseRequest $request): object
+    public function store(CreateCourseRequest $request): object
     {
-        $new_user = Course::create($request->except('course_img'));
+
+        $currentUser = Auth::user();
+        $courseData = array_merge($request->except('course_img'), ['user_id' => $currentUser->id]);
+        $new_course = Course::create($courseData);
 
         if ($request->hasFile('course_img')) {
-            $avatar = $request->file('course_img');
+            $course_image = $request->file('course_img');
 
-            $path = $avatar->store('courses_images');
+            $path = $course_image->store('courses_images');
 
-            $new_user->update(['course_img' => $path]);
+            $new_course->update(['course_img' => $path]);
         }
 
 
@@ -92,17 +96,9 @@ class CourseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CourseRequest $request, Course $course): object
+    public function update(UpdateCourseRequest $request, Course $course): object
     {
-        $data = $request->except('course_img');
-        if ($request->hasFile('course_img')) {
-            $course_img = $request->file('course_img');
-            $path = $course_img->store('courses_images');
-            $data['course_img'] = $path;
-        }
-
-
-
+        $data = $request->all();
         $course->update($data);
         return redirect()->route('courses.index');
     }

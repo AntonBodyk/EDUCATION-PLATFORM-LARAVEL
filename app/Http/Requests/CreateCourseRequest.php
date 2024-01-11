@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CourseRequest extends FormRequest
+class CreateCourseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -40,7 +40,7 @@ class CourseRequest extends FormRequest
             'body.min' => 'Введіть мінімум 3 символи',
             'title.max'=> 'Максимум 100 символів',
             'body.max'=> 'Максимум 500 символів',
-//            'course_img'=> 'Не вірний тип файлу, додайте файл типу:jpg,jpeg,png',
+            'course_img'=> 'Не вірний тип файлу, додайте файл типу:jpg,jpeg,png',
             'title.regex'=> 'Назва повинна починатися з великої літери',
             'body.regex'=> 'Опис повинен починатися з великої літери'
         ];
