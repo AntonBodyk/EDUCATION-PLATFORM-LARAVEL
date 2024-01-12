@@ -16,9 +16,11 @@ class AuthController extends Controller
     {
         $validateUser = Validator::make($request->all(),
             [
+                'avatar' => 'required|image:jpg,jpeg,png',
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|unique:users,email',
-                'password' => 'required|string|min:8'
+                'role_id' => 'required',
+                'password' => 'required|string|min:8',
             ]);
 
         if ($validateUser->fails()) {
@@ -30,8 +32,10 @@ class AuthController extends Controller
         }
 
         $user = User::create([
+            'avatar'=>$request->avatar,
             'name' => $request->name,
             'email' => $request->email,
+            'role_id'=> $request->role_id,
             'password' => Hash::make($request->password)
         ]);
 
