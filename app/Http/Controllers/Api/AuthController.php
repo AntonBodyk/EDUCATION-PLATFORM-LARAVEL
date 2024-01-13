@@ -28,7 +28,7 @@ class AuthController extends Controller
                 'status' => false,
                 'message' => 'validation error',
                 'errors' => $validateUser->errors()
-            ], 401);
+            ], 422);
         }
 
         if($request->hasFile('avatar')){
@@ -64,23 +64,31 @@ class AuthController extends Controller
                 'status' => false,
                 'message' => 'validation error',
                 'errors' => $validateUser->errors()
-            ], 401);
+            ], 422);
         }
 
         if (!auth()->attempt($request->only('email', 'password'))) {
             return response()->json([
-                'message' => 'You cannot sign with those email and password',
+                'message' => 'User not found',
                 'status' => false
-            ], 401);
+            ], 404);
         }
 
         $user = User::where('email', $request->email)->first();
 
+        $userArray = [
+            'id'=> $user->id,
+            'avatar'=> $user->avatar,
+            'name'=> $user->name,
+            'email'=> $user->email,
+            'role_id'=> $user->role_id
+        ];
 
         return response()->json([
             'status' => true,
             'message' => 'User Created Successfully',
             'token' => $user->createToken("API TOKEN")->plainTextToken,
+            'user'=> $userArray
         ], 200);
     }
 
