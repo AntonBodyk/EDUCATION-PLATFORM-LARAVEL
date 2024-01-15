@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -63,7 +64,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(CreateUserRequest $request): object
+    public function store(UserRequest $request): object
     {
 
         $new_user = User::create($request->except('avatar'));
@@ -85,7 +86,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return User::findOrFail($id);
     }
 
     /**
