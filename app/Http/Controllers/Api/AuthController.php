@@ -33,8 +33,6 @@ class AuthController extends Controller
 
         if($request->hasFile('avatar')){
             $avatarPath = $request->file('avatar')->store('avatars');
-            $baseUrl = env('APP_URL') . '/storage';
-            $fullUrl = url($baseUrl . '/' . $avatarPath);
         }
 
 
@@ -47,7 +45,6 @@ class AuthController extends Controller
         ]);
 
         return response()->json([
-            'fullUrl'=> $fullUrl,
             'status' => true,
             'message' => 'User Created Successfully',
             'token' => $user->createToken("API TOKEN")->plainTextToken,
@@ -79,19 +76,22 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
+        $fullUrl = url('storage/' . $user->avatar);
+
         $userArray = [
             'id'=> $user->id,
-            'avatar'=> $user->avatar,
+            'avatar'=> $fullUrl,
             'name'=> $user->name,
             'email'=> $user->email,
-            'role_id'=> $user->role_id
+            'role_id'=> $user->role_id,
         ];
+
 
         return response()->json([
             'status' => true,
             'message' => 'User Created Successfully',
             'token' => $user->createToken("API TOKEN")->plainTextToken,
-            'user'=> $userArray
+            'user'=> $userArray,
         ], 200);
     }
 

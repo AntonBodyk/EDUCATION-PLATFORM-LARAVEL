@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -26,5 +27,6 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
 Route::apiResources([
-    'roles'=> RoleController::class
+    'roles'=> RoleController::class,
+    'users'=> UserController::class
 ]);
