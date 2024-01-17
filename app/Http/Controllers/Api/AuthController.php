@@ -14,14 +14,17 @@ class AuthController extends Controller
 
     public function register(Request $request): JsonResponse
     {
-        $validateUser = Validator::make($request->all(),
-            [
-                'avatar' => 'required|image:jpg,jpeg,png',
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|unique:users,email',
-                'role_id' => 'required',
-                'password' => 'required|string|min:8',
-            ]);
+        $validateUser = Validator::make($request->all(), [
+            'avatar' => 'required|image:jpg,jpeg,png',
+            'second_name' => 'required|string|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐ]+\s*$/u',
+            'first_name' => 'required|string|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐ]+\s*$/u',
+            'last_name' => 'required|string|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐ]+\s*$/u',
+            'email' => 'required|string|email|unique:users,email',
+            'role_id' => 'required',
+            'password' => 'required|string|min:8|confirmed|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
+        ]);
+
+
 
         if ($validateUser->fails()) {
             return response()->json([
@@ -31,17 +34,18 @@ class AuthController extends Controller
             ], 422);
         }
 
-        if($request->hasFile('avatar')){
+        if ($request->hasFile('avatar')) {
             $avatarPath = $request->file('avatar')->store('avatars');
         }
 
-
         $user = User::create([
-            'avatar'=>$avatarPath,
-            'name' => $request->name,
-            'email' => $request->email,
-            'role_id'=> $request->role_id,
-            'password' => Hash::make($request->password)
+            'avatar' => $avatarPath,
+            'second_name' => mb_convert_case($request->input('second_name'), MB_CASE_TITLE, 'UTF-8'),
+            'first_name' => mb_convert_case($request->input('first_name'), MB_CASE_TITLE, 'UTF-8'),
+            'last_name' => mb_convert_case($request->input('last_name'), MB_CASE_TITLE, 'UTF-8'),
+            'email' => $request->input('email'),
+            'role_id' => $request->input('role_id'),
+            'password' => Hash::make($request->input('password'))
         ]);
 
         return response()->json([
@@ -81,7 +85,9 @@ class AuthController extends Controller
         $userArray = [
             'id'=> $user->id,
             'avatar'=> $fullUrl,
-            'name'=> $user->name,
+            'second_name'=> $user->second_name,
+            'first_name'=> $user->first_name,
+            'last_name'=> $user->last_name,
             'email'=> $user->email,
             'role_id'=> $user->role_id,
         ];
