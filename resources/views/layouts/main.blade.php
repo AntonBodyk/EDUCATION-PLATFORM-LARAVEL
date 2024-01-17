@@ -40,7 +40,7 @@
                         <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
                     </li>
                     <li class="nav-item">
-                        <span class="hello-user">Доброго дня, {{auth()->user()->name}}!</span>
+                        <span class="hello-user">Доброго дня, {{auth()->user()->first_name}}!</span>
                     </li>
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}" class="logout">

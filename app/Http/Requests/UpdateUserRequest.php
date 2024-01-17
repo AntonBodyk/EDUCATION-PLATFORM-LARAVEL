@@ -22,7 +22,9 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
+            'first_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
+            'second_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
+            'last_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
             'email'=> 'required|min:3|max:100',
             'role_id' => 'required',
         ];
@@ -31,11 +33,17 @@ class UpdateUserRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Заповніть поле',
+            'first_name.required' => 'Заповніть поле',
+            'second_name.required' => 'Заповніть поле',
+            'last_name.required' => 'Заповніть поле',
             'email.required' => 'Заповніть поле',
             'role_id.required' => 'Заповніть поле',
-            'name.min' => 'Введіть мінімум 3 символи',
-            'name.max' => 'Максимум 100 символів',
+            'first_name.min' => 'Введіть мінімум 3 символи',
+            'second_name.min' => 'Введіть мінімум 3 символи',
+            'last_name.min' => 'Введіть мінімум 3 символи',
+            'first_name.max' => 'Максимум 100 символів',
+            'second_name.max' => 'Введіть мінімум 3 символи',
+            'last_name.max' => 'Введіть мінімум 3 символи',
             'email.min' => 'Введіть мінімум 3 символи',
             'email.max' => 'Максимум 100 символів',
             'name.regex'=>"Ім'я повинно починатися з великої літери",

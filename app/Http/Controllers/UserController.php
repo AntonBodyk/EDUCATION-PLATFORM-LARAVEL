@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Http\Requests\UserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,29 +20,24 @@ class UserController extends Controller
      */
     public function index(Request $request): object
     {
-        // Получите параметры сортировки из запроса
         $sortColumn = $request->get('sortColumn', 'id');
         $sortDirection = $request->get('sortDirection', 'asc');
 
-        $validColumns = ['id', 'name', 'email', 'role'];
+        $validColumns = ['id', 'first_name', 'email', 'role'];
         if (!in_array($sortColumn, $validColumns)) {
-            $sortColumn = 'name';
+            $sortColumn = 'first_name';
         }
 
-        // Получите запрос на пользователей, отсортированных и разбитых по страницам
         $usersQuery = User::orderBy($sortColumn, $sortDirection);
 
-        // Примените фильтр по роли, если он установлен
         if ($request->filled('roleFilter')) {
             $usersQuery->whereHas('role', function ($query) use ($request) {
                 $query->where('role_name', $request->input('roleFilter'));
             });
         }
 
-        // Получите пользователей, отсортированных и разбитых по страницам
         $users = $usersQuery->paginate(50);
 
-        // Проверьте, допустимы ли значения номера страницы
         if ($request->input('page') > $users->lastPage()) {
             abort(404);
         }
@@ -64,7 +58,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(UserRequest $request): object
+    public function store(CreateUserRequest $request): object
     {
 
         $new_user = User::create($request->except('avatar'));

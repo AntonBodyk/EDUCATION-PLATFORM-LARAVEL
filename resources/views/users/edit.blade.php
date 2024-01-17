@@ -8,10 +8,24 @@
 
             <input type="hidden" name="user_id" value="{{ $user->id }}">
             <div class="mb-3">
-                <label for="exampleInputName1" class="form-label">Ім'я</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputName1" name="name" value="{{old('name', $user->name)}}">
+                <label for="exampleInputSecondName" class="form-label">Прізвище</label>
+                <input type="text" class="form-control @error('second_name') is-invalid @enderror" id="exampleInputSecondName" name="second_name" value="{{old('second_name', $user->second_name)}}">
             </div>
-            @error('name')
+            @error('second_name')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
+                <label for="exampleInputFirstName" class="form-label">Ім'я</label>
+                <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="exampleInputFirstName" name="first_name" value="{{old('first_name', $user->first_name)}}">
+            </div>
+            @error('first_name')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
+                <label for="exampleInputLastName" class="form-label">Ім'я по батькові</label>
+                <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="exampleInputLastName" name="last_name" value="{{old('last_name', $user->last_name)}}">
+            </div>
+            @error('last_name')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <div class="mb-3">

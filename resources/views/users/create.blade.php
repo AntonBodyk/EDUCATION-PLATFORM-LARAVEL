@@ -11,11 +11,25 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="mb-3">
-            <label for="exampleInputName1" class="form-label">Ім'я</label>
-            <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputName1" value="{{ old('name') }}">
+            <label for="exampleInputSecondName" class="form-label">Прізвище</label>
+            <input name="second_name" type="text" class="form-control @error('second_name') is-invalid @enderror" id="exampleInputSecondName" value="{{ old('second_name') }}">
         </div>
-        @error('name')
+        @error('second_name')
             <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <div class="mb-3">
+            <label for="exampleInputFirstName" class="form-label">Ім'я</label>
+            <input name="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" id="exampleInputFirstName" value="{{ old('first_name') }}">
+        </div>
+        @error('first_name')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <div class="mb-3">
+            <label for="exampleInputLastName" class="form-label">Ім'я по батькові</label>
+            <input name="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" id="exampleInputLastName" value="{{ old('last_name') }}">
+        </div>
+        @error('last_name')
+        <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Ел.адреса</label>
