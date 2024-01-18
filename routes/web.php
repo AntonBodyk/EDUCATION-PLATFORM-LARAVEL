@@ -19,28 +19,29 @@ use App\Mail\ExelMail;
 |
 */
 
+
 Route::get('/', function () {
     return view('admin');
 })->name('admin');
 
-Route::post('/send-email', [EmailController::class, 'sendUserEmail'])->name('send-email')->middleware('auth');
+Route::post('/send-email', [EmailController::class, 'sendUserEmail'])->name('send-email')->middleware('auth', 'admin');
 
-Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users')->middleware('auth');
+Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users')->middleware('auth', 'admin');
 
-Route::view('/email', 'email.users_email')->name('users-email')->middleware('auth');
+Route::view('/email', 'email.users_email')->name('users-email')->middleware('auth', 'admin');
 
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('auth');
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create')->middleware('auth');
-Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware('auth');
+Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('admin', 'auth');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create')->middleware('auth', 'admin');
+Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware('auth', 'admin');
 Route::post('/users', [UserController::class, 'store'])->name('users.store')->middleware('auth');
-Route::patch('users/{user}', [UserController::class, 'update'])->name('users.update')->middleware('auth');
-Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth');
+Route::patch('users/{user}', [UserController::class, 'update'])->name('users.update')->middleware('auth', 'admin');
+Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth', 'admin');
 
 
-Route::get('/courses', [CourseController::class, 'index'])->name('courses.index')->middleware('auth');
-Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create')->middleware('auth');
-Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit')->middleware('auth');
-Route::post('/courses', [CourseController::class, 'store'])->name('courses.store')->middleware('auth');
-Route::patch('/courses/{course}', [CourseController::class, 'update'])->name('courses.update')->middleware('auth');
-Route::delete('courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy')->middleware('auth');
+Route::get('/courses', [CourseController::class, 'index'])->name('courses.index')->middleware('auth', 'admin');
+Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create')->middleware('auth', 'admin');
+Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit')->middleware('auth', 'admin');
+Route::post('/courses', [CourseController::class, 'store'])->name('courses.store')->middleware('auth', 'admin');
+Route::patch('/courses/{course}', [CourseController::class, 'update'])->name('courses.update')->middleware('auth', 'admin');
+Route::delete('courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy')->middleware('auth', 'admin');

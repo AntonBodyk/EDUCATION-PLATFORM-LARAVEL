@@ -18,36 +18,42 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="navbar-collapse" id="navbarNav">
             <ul class="navbar">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('admin')}}">Головна</a>
-                </li>
                 @guest()
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link active" aria-current="page" href="{{route('admin')}}">Головна</a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a href="{{route('login')}}" class="nav-link nav-login">Вхід</a>
                     </li>
                 @endguest
                 @auth()
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('users.index')}}">Користувачі</a>
-                        <a class="fa-solid fa-user-plus" href="{{route('users.create')}}"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('courses.index')}}">Курси</a>
-                        <a class="fa-solid fa-plus" href="{{route('courses.create')}}"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
-                        <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
-                    </li>
-                    <li class="nav-item">
-                        <span class="hello-user">Доброго дня, {{auth()->user()->first_name}}!</span>
-                    </li>
-                    <li class="nav-item">
-                        <form method="POST" action="{{ route('logout') }}" class="logout">
-                            @csrf
-                            <button type="submit" class="logout-btn">Вихід</button>
-                        </form>
-                    </li>
+                    @if(auth()->user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('users.index')}}">Користувачі</a>
+                            <a class="fa-solid fa-user-plus" href="{{route('users.create')}}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('courses.index')}}">Курси</a>
+                            <a class="fa-solid fa-plus" href="{{route('courses.create')}}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
+                            <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="hello-user">Доброго дня, {{auth()->user()->first_name}}!</span>
+                        </li>
+                        <li class="nav-item">
+                            <form method="POST" action="{{ route('logout') }}" class="logout">
+                                @csrf
+                                <button type="submit" class="logout-btn">Вихід</button>
+                            </form>
+                        </li>
+                        @else
+                            <li class="nav-item">
+                                <a href="{{route('login')}}" class="nav-link nav-login">Вхід</a>
+                            </li>
+                    @endif
                 @endauth
             </ul>
         </div>
