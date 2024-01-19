@@ -99,7 +99,12 @@ class UserController extends Controller
     {
         $data = $request->all();
         $user->update($data);
-        return redirect()->route('users.index');
+
+        if ($request->ajax()) {
+            return response()->json(['userProfile' => $user]);
+        } else {
+            return redirect()->route('users.index');
+        }
     }
 
 
