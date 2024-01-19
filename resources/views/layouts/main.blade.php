@@ -27,7 +27,7 @@
                     </li>
                 @endguest
                 @auth()
-                    @if(auth()->user())
+                    @if(auth()->user()->role_id === 1)
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('users.index')}}">Користувачі</a>
                             <a class="fa-solid fa-user-plus" href="{{route('users.create')}}"></a>

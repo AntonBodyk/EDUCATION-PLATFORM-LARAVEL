@@ -31,7 +31,7 @@ Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('exp
 Route::view('/email', 'email.users_email')->name('users-email')->middleware('auth', 'admin');
 
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('admin', 'auth');
+Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('auth','admin');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create')->middleware('auth', 'admin');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')->middleware('auth', 'admin');
 Route::post('/users', [UserController::class, 'store'])->name('users.store')->middleware('auth');
