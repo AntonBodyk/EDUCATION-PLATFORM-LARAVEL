@@ -80,7 +80,11 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
-        $fullUrl = url('storage/' . $user->avatar);
+        if ($user->avatar) {
+            $fullUrl = url('storage/' . $user->avatar);
+        } else {
+            $fullUrl = null;
+        }
 
         $userArray = [
             'id'=> $user->id,
