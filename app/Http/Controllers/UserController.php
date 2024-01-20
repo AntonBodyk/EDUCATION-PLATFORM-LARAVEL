@@ -98,13 +98,21 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user): object
     {
         $data = $request->all();
+
+        if ($request->hasFile('avatar')) {
+            $avatarPath = $request->file('avatar')->store('avatars');
+            $data['avatar'] = $avatarPath;
+        }
+
         $user->update($data);
 
-        if ($request->ajax()) {
-            return response()->json(['userProfile' => $user]);
-        } else {
-            return redirect()->route('users.index');
+        if ($request->expectsJson()) {
+            return response()->json(['message' => 'Updated successfully'], 200)
+                ->header('Access-Control-Allow-Methods', 'PATCH')
+                ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
         }
+
+        return redirect()->route('users.index');
     }
 
 
