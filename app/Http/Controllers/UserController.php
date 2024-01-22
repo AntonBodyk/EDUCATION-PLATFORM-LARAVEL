@@ -95,9 +95,9 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserRequest $request, User $user): object
+    public function update(Request $request, User $user): object
     {
-        $data = $request->all();
+        $data = $request->except('avatar');
 
         if ($request->hasFile('avatar')) {
             $avatarPath = $request->file('avatar')->store('avatars');
@@ -107,7 +107,10 @@ class UserController extends Controller
         $user->update($data);
 
         if ($request->expectsJson()) {
-            return response()->json(['message' => 'Updated successfully'], 200)
+            $user->refresh();
+            $user->avatar = Storage::url($user->avatar);
+
+            return response()->json(['user' => $user->only(['id', 'first_name','second_name', 'last_name', 'role_id', 'email', 'avatar']), 'message' => 'Updated successfully'], 200)
                 ->header('Access-Control-Allow-Methods', 'PATCH')
                 ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
         }

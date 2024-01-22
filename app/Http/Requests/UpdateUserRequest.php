@@ -22,9 +22,10 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'avatar' => 'required|image:jpg,jpeg,png',
             'first_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
             'second_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
-            'last_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
+            'last_name'=> 'required|min:3|max:100|regex:/^[A-ZА-ЯЇ][\p{Lu}\p{L}0-9\s]+$/u',
             'email'=> 'required|min:3|max:100',
             'role_id' => 'required',
         ];
@@ -33,6 +34,8 @@ class UpdateUserRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'avatar.required' => 'Заповніть поле',
+            'avatar.image' => 'Не вірний тип файлу, додайте файл типу:jpg,jpeg,png',
             'first_name.required' => 'Заповніть поле',
             'second_name.required' => 'Заповніть поле',
             'last_name.required' => 'Заповніть поле',
