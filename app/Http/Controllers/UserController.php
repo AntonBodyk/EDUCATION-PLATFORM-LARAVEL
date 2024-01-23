@@ -95,7 +95,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user): object
+    public function update(UpdateUserRequest $request, User $user): object
     {
         $data = $request->except('avatar');
 

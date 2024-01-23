@@ -8,6 +8,13 @@
 
             <input type="hidden" name="user_id" value="{{ $user->id }}">
             <div class="mb-3">
+                <label for="exampleInputAvatar" class="form-label">Фото</label>
+                <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="exampleInputAvatar" name="avatar" value="{{old('avatar', $user->avatar)}}">
+            </div>
+            @error('avatar')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
                 <label for="exampleInputSecondName" class="form-label">Прізвище</label>
                 <input type="text" class="form-control @error('second_name') is-invalid @enderror" id="exampleInputSecondName" name="second_name" value="{{old('second_name', $user->second_name)}}">
             </div>
