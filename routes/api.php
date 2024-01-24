@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\UserController;
 
 
@@ -28,5 +29,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth:sanct
 
 Route::resources([
     'roles'=> RoleController::class,
-    'users'=> UserController::class
+    'users'=> UserController::class,
+    'categories'=> CategoryController::class
 ]);
