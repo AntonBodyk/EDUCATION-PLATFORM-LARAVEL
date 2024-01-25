@@ -61,7 +61,13 @@ class UserController extends Controller
     public function store(CreateUserRequest $request): object
     {
 
-        $new_user = User::create($request->except('avatar'));
+        $data = $request->except('avatar');
+
+        $data['first_name'] = mb_convert_case($data['first_name'], MB_CASE_TITLE, 'UTF-8');
+        $data['second_name'] = mb_convert_case($data['second_name'], MB_CASE_TITLE, 'UTF-8');
+        $data['last_name'] = mb_convert_case($data['last_name'], MB_CASE_TITLE, 'UTF-8');
+
+        $new_user = User::create($data);
 
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
@@ -70,7 +76,6 @@ class UserController extends Controller
 
             $new_user->update(['avatar' => $path]);
         }
-
 
         return redirect()->route('users.index');
     }
@@ -98,6 +103,10 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user): object
     {
         $data = $request->except('avatar');
+
+        $data['first_name'] = mb_convert_case($data['first_name'], MB_CASE_TITLE, 'UTF-8');
+        $data['second_name'] = mb_convert_case($data['second_name'], MB_CASE_TITLE, 'UTF-8');
+        $data['last_name'] = mb_convert_case($data['last_name'], MB_CASE_TITLE, 'UTF-8');
 
         if ($request->hasFile('avatar')) {
             $avatarPath = $request->file('avatar')->store('avatars');

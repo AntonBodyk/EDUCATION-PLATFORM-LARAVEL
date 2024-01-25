@@ -24,7 +24,7 @@
             <label for="exampleInputCategory1" class="form-label">Категорія курсу</label>
             <select name="category_id" class="form-select @error('category_id') is-invalid @enderror" id="exampleInputCategory1">
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}" {{old('category_id', $category->category_id)  == $category->id ? 'selected' : '' }}>
+                    <option value="{{ $category->id }}" {{old('category_id', $course->category_id)  == $category->id ? 'selected' : '' }}>
                         {{ $category->category_name }}
                     </option>
                 @endforeach

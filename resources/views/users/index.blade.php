@@ -10,12 +10,12 @@
                         Id
                     </a>
                 </th>
+                <th>Surname</th>
                 <th>
                     <a class="th-link-name" href="{{ route('users.index', ['sortColumn' => 'first_name', 'sortDirection' => $sortColumn === 'first_name' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
                         Name
                     </a>
                 </th>
-                <th>Surname</th>
                 <th>Last_name</th>
                 <th>
                     <a class="th-link-email" href="{{ route('users.index', ['sortColumn' => 'email', 'sortDirection' => $sortColumn === 'email' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
@@ -30,8 +30,8 @@
             @foreach($users as $user)
                 <tr class="tr-users">
                     <td class="td-id">{{$user->id}}</td>
-                    <td class="td-name">{{$user->first_name}}</td>
                     <td class="td-name">{{$user->second_name}}</td>
+                    <td class="td-name">{{$user->first_name}}</td>
                     <td class="td-name">{{$user->last_name}}</td>
                     <td class="td-email">{{$user->email}}</td>
                     <td class="td-role">

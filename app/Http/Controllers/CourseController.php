@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
+use App\Http\Resources\CourseResource;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\User;
@@ -40,6 +41,10 @@ class CourseController extends Controller
 
         if ($request->input('page') > $courses->lastPage()) {
             abort(404);
+        }
+
+        if ($request->expectsJson()){
+            return CourseResource::collection(Course::all());
         }
 
         return view('courses.index', compact('courses', 'sortColumn', 'sortDirection'));

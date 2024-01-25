@@ -24,9 +24,14 @@ class User extends Authenticatable
         return $this->hasMany(LessonComment::class, 'user_id', 'id');
     }
 
-    public function courses(): object
+    public function authoredCourses(): object
     {
-        return $this->hasMany(Course::class, 'teacher_id', 'id');
+        return $this->hasMany(Course::class, 'author_id');
+    }
+
+    public function enrolledCourses(): object
+    {
+        return $this->belongsToMany(Course::class);
     }
 
     public function lessons(): object

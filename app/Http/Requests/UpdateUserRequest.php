@@ -23,9 +23,9 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'avatar' => 'required|image:jpg,jpeg,png',
-            'first_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}\s]+$/u',
-            'second_name'=> 'required|min:3|max:100|regex:/^[A-ZА-Я][\p{Lu}\p{L}\s]+$/u',
-            'last_name'=> 'required|min:3|max:100|regex:/^[A-ZА-ЯЇ][\p{Lu}\p{L}\s]+$/u',
+            'first_name'=> 'required|min:3|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐєЄ]+\s*$/u',
+            'second_name'=> 'required|min:3|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐєЄ]+\s*$/u',
+            'last_name'=> 'required|min:3|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐєЄ]+\s*$/u',
             'email'=> 'required|min:3|max:100',
             'role_id' => 'required',
         ];
@@ -49,10 +49,9 @@ class UpdateUserRequest extends FormRequest
             'last_name.max' => 'Введіть мінімум 3 символи',
             'email.min' => 'Введіть мінімум 3 символи',
             'email.max' => 'Максимум 100 символів',
-            'name.regex'=>"Ім'я повинно починатися з великої літери",
-            'first_name.regex' => "Ім'я повинно починатися з великої літери і не містити цифри",
-            'second_name.regex' => "Прізвище повинно починатися з великої літери і не містити цифри",
-            'last_name.regex' => "По батькові повинно починатися з великої літери і не містити цифри",
+            'first_name.regex' => "Ім'я не повинно містити цифри",
+            'second_name.regex' => "Прізвище не повинно містити цифри",
+            'last_name.regex' => " Ім'я по батькові не повинно містити цифри",
         ];
     }
 }
