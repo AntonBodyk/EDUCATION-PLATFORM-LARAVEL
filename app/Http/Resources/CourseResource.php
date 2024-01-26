@@ -20,7 +20,9 @@ class CourseResource extends JsonResource
             'title'=>$this->title,
             'course_img_url'=> Storage::url($this->course_img),
             'body'=> $this->body,
+            'author_id'=> $this->author_id,
             'author'=>$this->author->only(['second_name', 'first_name', 'last_name']),
+            'course_price'=> $this->course_price,
             'category_id'=>$this->category_id
         ];
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Resources\UserResource;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -108,6 +109,8 @@ class UserController extends Controller
         $data['second_name'] = mb_convert_case($data['second_name'], MB_CASE_TITLE, 'UTF-8');
         $data['last_name'] = mb_convert_case($data['last_name'], MB_CASE_TITLE, 'UTF-8');
 
+        $userResource = new UserResource($user);
+
         if ($request->hasFile('avatar')) {
             $avatarPath = $request->file('avatar')->store('avatars');
             $data['avatar'] = $avatarPath;
@@ -117,9 +120,9 @@ class UserController extends Controller
 
         if ($request->expectsJson()) {
             $user->refresh();
-            $user->avatar = Storage::url($user->avatar);
+//            $user->avatar = Storage::url($user->avatar);
 
-            return response()->json(['user' => $user->only(['id', 'first_name','second_name', 'last_name', 'role_id', 'email', 'avatar']), 'message' => 'Updated successfully'], 200)
+            return response()->json(['user' => $userResource, 'message' => 'Updated successfully'], 200)
                 ->header('Access-Control-Allow-Methods', 'PATCH')
                 ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
         }
