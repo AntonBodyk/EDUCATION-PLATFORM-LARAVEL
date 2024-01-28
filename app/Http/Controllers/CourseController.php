@@ -50,6 +50,16 @@ class CourseController extends Controller
         return view('courses.index', compact('courses', 'sortColumn', 'sortDirection'));
     }
 
+    public function search(Request $request): object
+    {
+        $query = $request->get('query', '');
+
+        $coursesQuery = Course::where('title', 'like', "%$query%");
+
+        $courses = $coursesQuery->get();
+
+        return CourseResource::collection($courses);
+    }
     /**
      * Show the form for creating a new resource.
      */
