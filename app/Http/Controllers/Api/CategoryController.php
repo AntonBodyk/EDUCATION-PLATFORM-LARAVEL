@@ -35,7 +35,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return Category::findOrFail($id);
     }
 
     /**

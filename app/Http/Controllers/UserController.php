@@ -84,7 +84,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id):object
     {
         return User::findOrFail($id);
     }
@@ -120,7 +120,6 @@ class UserController extends Controller
 
         if ($request->expectsJson()) {
             $user->refresh();
-//            $user->avatar = Storage::url($user->avatar);
 
             return response()->json(['user' => $userResource, 'message' => 'Updated successfully'], 200)
                 ->header('Access-Control-Allow-Methods', 'PATCH')

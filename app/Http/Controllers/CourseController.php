@@ -9,6 +9,7 @@ use App\Http\Resources\CourseResource;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,7 +53,7 @@ class CourseController extends Controller
 
     public function search(Request $request): object
     {
-        $query = $request->get('query', '');
+        $query = $request->get('searchQuery', '');
 
         $coursesQuery = Course::where('title', 'like', "%$query%");
 

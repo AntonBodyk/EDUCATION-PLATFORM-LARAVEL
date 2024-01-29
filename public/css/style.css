@@ -3,6 +3,7 @@
 }
 .nav-item a{
     color: white;
+    font-size: 20px;
 }
 .nav-item a:first-child{
     margin-left: 100px;
@@ -14,6 +15,11 @@
 .nav-item a:focus{
     color: yellow;
 }
+.nav-item h1{
+    color: white;
+    font-family: "Russo One", sans-serif;
+    margin-left: 70px;
+}
 .container {
     background-color: #f8f9fa;
     padding: 20px 0 0 20%;
@@ -24,6 +30,7 @@
 
 .user-title{
     margin: 100px 0 20px 36%;
+    font-family: "Rubik", sans-serif;
 }
 .fa-pen{
     margin-left: 50px;
@@ -39,12 +46,14 @@
 
 .fa-user-plus{
     color: white;
+    margin-top: 2px;
     cursor: pointer;
     padding-top: 13px;
     text-decoration: none;
 }
 .fa-plus{
     color: white;
+    margin-top: 2px;
     cursor: pointer;
     padding-top: 14px;
     text-decoration: none;
@@ -69,7 +78,6 @@
 .th-link-name:hover{
     color: black;
 }
-
 .th-link-email{
     text-decoration: none;
     color: black;
@@ -196,15 +204,18 @@
 .logout-btn{
     width: 80px;
     height: 30px;
-    margin: 10px 0 0 30px;
+    font-weight: bold;
+    margin: 15px 0 0 30px;
     background-color: white;
     color: #1a202c;
     border-radius: 5px;
     border: none;
+    font-family: "Rubik", sans-serif;
 }
 
 .course-title{
     margin: 100px 0 20px 40%;
+    font-family: "Rubik", sans-serif;
 }
 .fa-trash{
     margin-left: 20px;
@@ -232,5 +243,6 @@
 }
 .hello-user{
     color: white;
-    margin-top: 8px;
+    margin-top: 14px;
+    font-family: "Rubik", sans-serif;
 }
