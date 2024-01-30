@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CourseResource;
 use App\Models\Category;
 use App\Models\Role;
 use Illuminate\Http\JsonResponse;
@@ -30,12 +31,22 @@ class CategoryController extends Controller
         //
     }
 
+    public function getCoursesByCategory(Category $category):object
+    {
+        $courses = $category->courses()->get();
+        return CourseResource::collection($courses);
+    }
+
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        return Category::findOrFail($id);
+        $category = Category::findOrFail($id);
+        return response()->json([
+            'id' => $category->id,
+            'name' => $category->category_name,
+        ]);
     }
 
     /**

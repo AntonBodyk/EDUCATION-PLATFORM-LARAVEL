@@ -77,7 +77,10 @@ class CourseController extends Controller
     {
 
         $currentUser = Auth::user();
-        $courseData = array_merge($request->except('course_img'), ['user_id' => $currentUser->id]);
+        $courseData = array_merge($request->except('course_img'), ['author_id' => $currentUser->id]);
+
+        $courseData['title'] = mb_convert_case($courseData['title'], MB_CASE_TITLE, 'UTF-8');
+        $courseData['body'] = mb_convert_case($courseData['body'], MB_CASE_TITLE, 'UTF-8');
         $new_course = Course::create($courseData);
 
         if ($request->hasFile('course_img')) {

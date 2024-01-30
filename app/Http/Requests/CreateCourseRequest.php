@@ -22,10 +22,11 @@ class CreateCourseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=> "required|min:3|max:100|regex:/^[A-ZА-ЯЇІЄЁҐ][\p{Lu}\p{L}0-9\s, '.-]+$/u",
+            'title'=> "required|min:3|max:100|regex:/^[\p{Lu}\p{L}0-9\s, '.-]+$/u",
             'course_img' => 'required|image:jpg,jpeg,png',
-            'body'=> "required|min:3|max:500|regex:/^[A-ZА-ЯЇІЄЁҐ][\p{Lu}\p{L}0-9\s, '.-]+$/u",
+            'body'=> "required|min:3|max:500|regex:/^[\p{Lu}\p{L}0-9\s, '.-]+$/u",
             'category_id' => 'required',
+            'course_price'=> 'required'
         ];
     }
 
@@ -42,7 +43,8 @@ class CreateCourseRequest extends FormRequest
             'body.max'=> 'Максимум 500 символів',
             'course_img'=> 'Не вірний тип файлу, додайте файл типу:jpg,jpeg,png',
             'title.regex'=> 'Назва повинна починатися з великої літери',
-            'body.regex'=> 'Опис повинен починатися з великої літери'
+            'body.regex'=> 'Опис повинен починатися з великої літери',
+            'course_price.required' => 'Заповніть поле'
         ];
     }
 }
