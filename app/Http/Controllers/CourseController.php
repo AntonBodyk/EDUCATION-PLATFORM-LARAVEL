@@ -76,23 +76,43 @@ class CourseController extends Controller
     public function store(CreateCourseRequest $request): object
     {
 
-        $currentUser = Auth::user();
-        $courseData = array_merge($request->except('course_img'), ['author_id' => $currentUser->id]);
+        if(!$request->expectsJson()){
+            $currentUser = Auth::user();
+            $courseData = array_merge($request->except('course_img'), ['author_id' => $currentUser->id]);
 
-        $courseData['title'] = mb_convert_case($courseData['title'], MB_CASE_TITLE, 'UTF-8');
-        $courseData['body'] = mb_convert_case($courseData['body'], MB_CASE_TITLE, 'UTF-8');
-        $new_course = Course::create($courseData);
+            $courseData['title'] = mb_convert_case($courseData['title'], MB_CASE_TITLE, 'UTF-8');
+            $courseData['body'] = mb_convert_case($courseData['body'], MB_CASE_TITLE, 'UTF-8');
 
-        if ($request->hasFile('course_img')) {
-            $course_image = $request->file('course_img');
+            $new_course = Course::create($courseData);
 
-            $path = $course_image->store('courses_images');
+            if ($request->hasFile('course_img')) {
+                $course_image = $request->file('course_img');
 
-            $new_course->update(['course_img' => $path]);
+                $path = $course_image->store('courses_images');
+
+                $new_course->update(['course_img' => $path]);
+            }
+
+            return redirect()->route('courses.index');
+        }else{
+            $currentUserId = $request->input('author_id');
+            $courseData = array_merge($request->except('course_img'), ['author_id' => $currentUserId]);
+
+            $courseData['title'] = mb_convert_case($courseData['title'], MB_CASE_TITLE, 'UTF-8');
+            $courseData['body'] = mb_convert_case($courseData['body'], MB_CASE_TITLE, 'UTF-8');
+
+            $new_course = Course::create($courseData);
+
+            if ($request->hasFile('course_img')) {
+                $course_image = $request->file('course_img');
+
+                $path = $course_image->store('courses_images');
+
+                $new_course->update(['course_img' => $path]);
+            }
+            return response()->json(['new_course' => $new_course, 'message' => 'Create successfully'], 200);
         }
 
-
-        return redirect()->route('courses.index');
     }
 
     /**
@@ -125,9 +145,17 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Course $course): object
+    public function destroy(Course $course, Request $request): object
     {
         $course->delete();
+
+        if ($request->expectsJson()) {
+
+            return response()->json(['user' => $course, 'message' => 'Deleted successfully'], 200)
+                ->header('Access-Control-Allow-Methods', 'DELETE')
+                ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
+        }
+
         return redirect()->route('courses.index');
     }
 }
