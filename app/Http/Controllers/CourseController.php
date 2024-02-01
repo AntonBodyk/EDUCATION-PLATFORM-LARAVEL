@@ -120,7 +120,7 @@ class CourseController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return new CourseResource(Course::findOrFail($id));
     }
 
     /**
