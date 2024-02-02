@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ExelMail;
 
@@ -45,3 +46,10 @@ Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('c
 Route::post('/courses', [CourseController::class, 'store'])->name('courses.store')->middleware('auth', 'admin');
 Route::patch('/courses/{course}', [CourseController::class, 'update'])->name('courses.update')->middleware('auth', 'admin');
 Route::delete('courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy')->middleware('auth', 'admin');
+
+Route::get('/lessons', [LessonController::class, 'index'])->name('lessons.index')->middleware('auth', 'admin');
+Route::get('/lessons/create', [LessonController::class, 'create'])->name('lessons.create')->middleware('auth', 'admin');
+Route::get('/lessons/{lesson}/edit', [LessonController::class, 'edit'])->name('lessons.edit')->middleware('auth', 'admin');
+Route::post('/lessons', [LessonController::class, 'store'])->name('lessons.store')->middleware('auth', 'admin');
+Route::patch('/lessons/{lesson}', [LessonController::class, 'update'])->name('lessons.update')->middleware('auth', 'admin');
+Route::delete('lessons/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy')->middleware('auth', 'admin');

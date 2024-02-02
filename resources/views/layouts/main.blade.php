@@ -39,6 +39,10 @@
                             <a class="fa-solid fa-plus" href="{{route('courses.create')}}"></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{route('lessons.index')}}">Уроки</a>
+                            <a class="fa-solid fa-plus" href="{{route('lessons.create')}}"></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
                             <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
                         </li>
