@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\CreateLessonRequest;
+use App\Http\Requests\UpdateLessonRequest;
 use App\Models\Lesson;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -100,16 +101,27 @@ class LessonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(Lesson $lesson, UpdateLessonRequest $request):object
     {
-
+        $data = $request->all();
+        $lesson->update($data);
+        return redirect()->route('lessons.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(Lesson $lesson, Request $request): object
     {
+        $lesson->delete();
 
+        if ($request->expectsJson()) {
+
+            return response()->json(['user' => $lesson, 'message' => 'Deleted successfully'], 200)
+                ->header('Access-Control-Allow-Methods', 'DELETE')
+                ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
+        }
+
+        return redirect()->route('lessons.index');
     }
 }
