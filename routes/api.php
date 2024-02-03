@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Api\RatingController;
 
 
 /*
@@ -29,6 +30,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 Route::get('/courses/search', [CourseController::class, 'search']);
 Route::get('/categories/{category}/courses', [CategoryController::class, 'getCoursesByCategory']);
+Route::post('/courses/{courseId}/rate', [RatingController::class, 'rateCourse']);
 
 Route::resources([
     'roles'=> RoleController::class,

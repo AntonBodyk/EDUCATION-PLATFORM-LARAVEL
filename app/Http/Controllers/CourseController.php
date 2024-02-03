@@ -118,7 +118,7 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id):object
     {
         return new CourseResource(Course::findOrFail($id));
     }
