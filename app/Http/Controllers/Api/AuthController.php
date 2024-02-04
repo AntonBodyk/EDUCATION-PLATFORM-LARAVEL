@@ -19,7 +19,7 @@ class AuthController extends Controller
             'second_name' => 'required|string|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐ]+\s*$/u',
             'first_name' => 'required|string|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐ]+\s*$/u',
             'last_name' => 'required|string|max:100|regex:/^[a-zA-Zа-яА-ЯёЁіІїЇґҐ]+\s*$/u',
-            'email' => 'required|string|email|unique:users,email',
+            'emails' => 'required|string|emails|unique:users,emails',
             'role_id' => 'required',
             'password' => 'required|string|min:8|confirmed|regex:/^[A-ZА-Я][\p{Lu}\p{L}0-9\s]+$/u',
         ]);
@@ -43,7 +43,7 @@ class AuthController extends Controller
             'second_name' => mb_convert_case($request->input('second_name'), MB_CASE_TITLE, 'UTF-8'),
             'first_name' => mb_convert_case($request->input('first_name'), MB_CASE_TITLE, 'UTF-8'),
             'last_name' => mb_convert_case($request->input('last_name'), MB_CASE_TITLE, 'UTF-8'),
-            'email' => $request->input('email'),
+            'emails' => $request->input('emails'),
             'role_id' => $request->input('role_id'),
             'password' => Hash::make($request->input('password'))
         ]);
@@ -59,7 +59,7 @@ class AuthController extends Controller
     {
         $validateUser = Validator::make($request->all(),
             [
-                'email' => 'required|string|email',
+                'emails' => 'required|string|emails',
                 'password' => 'required|string'
             ]);
 
@@ -71,14 +71,14 @@ class AuthController extends Controller
             ], 422);
         }
 
-        if (!auth()->attempt($request->only('email', 'password'))) {
+        if (!auth()->attempt($request->only('emails', 'password'))) {
             return response()->json([
                 'message' => 'User not found',
                 'status' => false
             ], 404);
         }
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('emails', $request->email)->first();
 
         if ($user->avatar) {
             $fullUrl = url('storage/' . $user->avatar);
@@ -92,7 +92,7 @@ class AuthController extends Controller
             'second_name'=> $user->second_name,
             'first_name'=> $user->first_name,
             'last_name'=> $user->last_name,
-            'email'=> $user->email,
+            'emails'=> $user->email,
             'role_id'=> $user->role_id,
         ];
 

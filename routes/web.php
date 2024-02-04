@@ -25,11 +25,11 @@ Route::get('/', function () {
     return view('admin');
 })->name('admin');
 
-Route::post('/send-email', [EmailController::class, 'sendUserEmail'])->name('send-email')->middleware('auth', 'admin');
+Route::post('/send-emails', [EmailController::class, 'sendUserEmail'])->name('send-emails')->middleware('auth', 'admin');
 
 Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users')->middleware('auth', 'admin');
 
-Route::view('/email', 'email.users_email')->name('users-email')->middleware('auth', 'admin');
+Route::view('/email', 'emails.users_email')->name('users-email')->middleware('auth', 'admin');
 
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('auth','admin');

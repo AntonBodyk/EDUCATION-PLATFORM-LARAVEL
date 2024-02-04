@@ -26,14 +26,14 @@ class ExelMail extends Mailable
     {
         if (file_exists($this->pathToFile)) {
             // Прикрепляем файл к письму
-            return $this->view('email.mail_sample')
+            return $this->view('emails.mail_sample')
                 ->attach($this->pathToFile, [
                     'as' => 'export.xlsx',
                     'mime' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                 ])
                 ->subject('Excel Export');
         } else {
-            return $this->view('email.mail_sample')->subject('Excel Export');
+            return $this->view('emails.mail_sample')->subject('Excel Export');
         }
     }
 
@@ -43,7 +43,7 @@ class ExelMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Exel Mail',
+            subject: 'Звіт по данним користувачів',
         );
     }
 
@@ -53,7 +53,7 @@ class ExelMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email.mail_sample',
+            view: 'emails.mail_sample',
         );
     }
 

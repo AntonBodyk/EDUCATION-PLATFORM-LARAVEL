@@ -25,7 +25,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'emails' => fake()->unique()->safeEmail(),
             'password' => static::$password ??= Hash::make('password'),
             'role'=> 'student',
             'remember_token' => Str::random(32),
@@ -35,7 +35,7 @@ class UserFactory extends Factory
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * Indicate that the model's emails address should be unverified.
      */
     public function unverified(): static
     {

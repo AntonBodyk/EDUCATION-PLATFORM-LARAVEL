@@ -20,6 +20,7 @@
     font-family: "Russo One", sans-serif;
     margin-left: 70px;
 }
+
 .container {
     background-color: #f8f9fa;
     padding: 20px 0 0 20%;
@@ -69,7 +70,7 @@
 .new-user-btn{
     width: 200px;
     height: 50px;
-    margin-left: 37%;
+    margin: 0 0 20px 37%;
 }
 .th-link-name{
     text-decoration: none;
@@ -239,6 +240,7 @@
 }
 
 .nav-login{
+    font-family: "Rubik", sans-serif;
     margin-right: 80px;
 }
 .hello-user{

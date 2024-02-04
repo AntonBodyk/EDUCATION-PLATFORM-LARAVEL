@@ -24,7 +24,7 @@ class UserController extends Controller
         $sortColumn = $request->get('sortColumn', 'id');
         $sortDirection = $request->get('sortDirection', 'asc');
 
-        $validColumns = ['id', 'first_name', 'email', 'role'];
+        $validColumns = ['id', 'first_name', 'emails', 'role'];
         if (!in_array($sortColumn, $validColumns)) {
             $sortColumn = 'first_name';
         }

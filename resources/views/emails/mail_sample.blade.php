@@ -5,7 +5,7 @@
     <a href="{{ route('export-users') }}" >Скачати файл</a>
 @endif
 
-<p>З повагою, <br>  Компанія</p>
+<p>З повагою, <br>  Компанія SmartLearn</p>
 
 
 

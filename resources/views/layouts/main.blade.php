@@ -44,7 +44,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
-                            <a class="fa-regular fa-envelope" href="{{route('users-email')}}"></a>
+                            <a class="fa-regular fa-envelope" href="{{route('users-emails')}}"></a>
                         </li>
                         <li class="nav-item">
                             <span class="hello-user">Доброго дня, {{auth()->user()->first_name}}!</span>

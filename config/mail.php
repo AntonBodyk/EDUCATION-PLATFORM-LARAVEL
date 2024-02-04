@@ -7,7 +7,7 @@ return [
     | Default Mailer
     |--------------------------------------------------------------------------
     |
-    | This option controls the default mailer that is used to send any email
+    | This option controls the default mailer that is used to send any emails
     | messages sent by your application. Alternative mailers may be setup
     | and used as needed; however, this mailer will be used by default.
     |
@@ -24,8 +24,8 @@ return [
     | their respective settings. Several examples have been configured for
     | you and you are free to add your own as your application requires.
     |
-    | Laravel supports a variety of email "transport" drivers to be used while
-    | sending an e-email. You will specify which one you are using for your
+    | Laravel supports a variety of emails "transport" drivers to be used while
+    | sending an e-emails. You will specify which one you are using for your
     | mailers below. You are free to add additional mailers as required.
     |
     | Supported: "smtp", "sendmail", "mailgun", "ses", "ses-v2",
@@ -118,7 +118,7 @@ return [
     | Markdown Mail Settings
     |--------------------------------------------------------------------------
     |
-    | If you are using Markdown based email rendering, you may configure your
+    | If you are using Markdown based emails rendering, you may configure your
     | theme and component paths here, allowing you to customize the design
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
@@ -128,7 +128,7 @@ return [
         'theme' => 'default',
 
         'paths' => [
-            resource_path('views/vendor/email'),
+            resource_path('views/vendor/emails'),
         ],
     ],
 
