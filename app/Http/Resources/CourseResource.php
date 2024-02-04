@@ -23,6 +23,7 @@ class CourseResource extends JsonResource
             'author_id'=> $this->author_id,
             'author'=>$this->author->only(['second_name', 'first_name', 'last_name']),
             'course_price'=> $this->course_price,
+            'average_rating'=>  $this->average_rating,
             'category_id'=>$this->category_id
         ];
     }
