@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Api\RatingController;
+use App\Http\Controllers\LessonController;
 
 
 /*
@@ -31,10 +32,12 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth:sanct
 Route::get('/courses/search', [CourseController::class, 'search']);
 Route::get('/categories/{category}/courses', [CategoryController::class, 'getCoursesByCategory']);
 Route::post('/courses/{courseId}/rate', [RatingController::class, 'rateCourse']);
+Route::get('/courses/{id}/lessons', [CourseController::class, 'lessons']);
 
 Route::resources([
     'roles'=> RoleController::class,
     'users'=> UserController::class,
     'categories'=> CategoryController::class,
-    'courses'=> CourseController::class
+    'courses'=> CourseController::class,
+    'lessons'=> LessonController::class,
 ]);

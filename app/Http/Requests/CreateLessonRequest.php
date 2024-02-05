@@ -40,10 +40,11 @@ class CreateLessonRequest extends FormRequest
             'description.min' => 'Введіть мінімум 3 символи',
             'title.max' => 'Максимум 100 символів',
             'description.max' => 'Максимум 500 символів',
-            'lesson_video' => 'Не вірний тип файлу, додайте файл типу:mp4,mov,avi,wmv',
+            'lesson_video.mimes' => 'Не вірний тип файлу, додайте файл типу:mp4,mov,avi,wmv',
             'title.regex' => 'Назва повинна починатися з великої літери',
             'description.regex' => 'Опис повинен починатися з великої літери',
-            'lesson_exercise.required' => 'Заповніть поле'
+            'lesson_exercise.required' => 'Заповніть поле',
+            'lesson_exercise.mimes' => 'Не вірний тип файлу, додайте файл типу:pdf',
         ];
     }
 }

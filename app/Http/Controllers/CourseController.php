@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Http\Resources\CourseResource;
+use App\Http\Resources\LessonResource;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\User;
@@ -115,6 +116,13 @@ class CourseController extends Controller
 
     }
 
+    public function lessons(string $id): object
+    {
+        $course = Course::findOrFail($id);
+        $lessons = $course->lessons;
+        return LessonResource::collection($lessons);
+    }
+
     /**
      * Display the specified resource.
      */
@@ -151,7 +159,7 @@ class CourseController extends Controller
 
         if ($request->expectsJson()) {
 
-            return response()->json(['user' => $course, 'message' => 'Deleted successfully'], 200)
+            return response()->json(['course' => $course, 'message' => 'Deleted successfully'], 200)
                 ->header('Access-Control-Allow-Methods', 'DELETE')
                 ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
         }
