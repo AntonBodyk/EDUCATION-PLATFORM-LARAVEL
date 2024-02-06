@@ -105,7 +105,7 @@ class LessonController extends Controller
      */
     public function edit(Lesson $lesson):object
     {
-        return view('lessons.edit', ['lesson'=> $lesson]);
+        return new LessonResource(Lesson::findOrFail($lesson));
     }
 
     /**

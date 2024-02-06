@@ -24,7 +24,7 @@ class CreateLessonRequest extends FormRequest
     {
         return [
             'title' => "required|min:3|max:100|regex:/^[\p{Lu}\p{L}0-9\s, '.-]+$/u",
-            'lesson_video' => 'required|mimes:mp4,mov,avi,wmv',
+            'lesson_video' => 'required|mimes:mp4,mov,avi,wmv,mkv',
             'description' => "required|min:3|max:500|regex:/^[\p{Lu}\p{L}0-9\s, '.-]+$/u",
             'lesson_exercise' => 'required|mimes:pdf'
         ];
@@ -40,7 +40,7 @@ class CreateLessonRequest extends FormRequest
             'description.min' => 'Введіть мінімум 3 символи',
             'title.max' => 'Максимум 100 символів',
             'description.max' => 'Максимум 500 символів',
-            'lesson_video.mimes' => 'Не вірний тип файлу, додайте файл типу:mp4,mov,avi,wmv',
+            'lesson_video.mimes' => 'Не вірний тип файлу, додайте файл типу:mp4,mov,avi,wmv,mkv',
             'title.regex' => 'Назва повинна починатися з великої літери',
             'description.regex' => 'Опис повинен починатися з великої літери',
             'lesson_exercise.required' => 'Заповніть поле',
