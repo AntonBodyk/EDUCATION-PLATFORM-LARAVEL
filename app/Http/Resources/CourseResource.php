@@ -21,6 +21,7 @@ class CourseResource extends JsonResource
             'course_img_url'=> Storage::url($this->course_img),
             'body'=> $this->body,
             'author_id'=> $this->author_id,
+            'pivot'=> $this->pivot,
             'author'=>$this->author->only(['second_name', 'first_name', 'last_name']),
             'course_price'=> $this->course_price,
             'average_rating'=>  $this->average_rating,

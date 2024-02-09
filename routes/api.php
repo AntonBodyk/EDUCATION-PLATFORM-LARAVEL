@@ -9,7 +9,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Api\RatingController;
 use App\Http\Controllers\LessonController;
-use App\Http\Controllers\StudentCourse;
+use App\Http\Controllers\EnrollCourseController;
 
 
 /*
@@ -41,5 +41,5 @@ Route::resources([
     'categories'=> CategoryController::class,
     'courses'=> CourseController::class,
     'lessons'=> LessonController::class,
-    'student-courses'=> StudentCourse::class
+    'enroll-courses' => EnrollCourseController::class
 ]);
