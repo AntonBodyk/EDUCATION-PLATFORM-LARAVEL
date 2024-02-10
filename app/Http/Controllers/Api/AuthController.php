@@ -2,11 +2,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -47,6 +49,8 @@ class AuthController extends Controller
             'role_id' => $request->input('role_id'),
             'password' => Hash::make($request->input('password'))
         ]);
+
+        Mail::to($user->email)->send(new WelcomeMail($user));
 
         return response()->json([
             'status' => true,

@@ -6,7 +6,7 @@
             <thead>
             <tr>
                 <th>
-                    <a class="th-link-name" href="{{ route('users.index', ['sortColumn' => 'id', 'sortDirection' => $sortColumn === 'id' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
+                    <a class="th-link-id" href="{{ route('users.index', ['sortColumn' => 'id', 'sortDirection' => $sortColumn === 'id' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
                         Id
                     </a>
                 </th>

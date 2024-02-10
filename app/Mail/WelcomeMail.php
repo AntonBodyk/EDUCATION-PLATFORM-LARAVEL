@@ -1,6 +1,7 @@
 <?php
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
@@ -14,10 +15,15 @@ class WelcomeMail extends Mailable
     public $email;
     public $password;
 
-    public function __construct($email, $password)
+    public function __construct(User $user)
     {
-        $this->email = $email;
-        $this->password = $password;
+        $this->email = $user->email;
+        $this->password = $user->password;
+    }
+
+    public function build()
+    {
+        return $this->view('emails.welcome');
     }
 
     public function envelope(): Envelope
@@ -26,27 +32,5 @@ class WelcomeMail extends Mailable
             subject: 'Ваші дані для входу',
         );
     }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'emails.welcome',
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [
-
-        ];
-
-    }
 }
+

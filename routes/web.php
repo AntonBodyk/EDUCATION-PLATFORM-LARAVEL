@@ -29,7 +29,6 @@ Route::post('/send-emails', [EmailController::class, 'sendUserEmail'])->name('se
 
 Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users')->middleware('auth', 'admin');
 
-Route::view('/email', 'emails.users_email')->name('users-email')->middleware('auth', 'admin');
 
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('auth','admin');

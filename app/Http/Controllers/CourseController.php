@@ -157,8 +157,7 @@ class CourseController extends Controller
     {
         $course->delete();
 
-        $currentUser = Auth::user();
-        $currentUser->enrolledCourses()->detach($course->id);
+
 
         if ($request->expectsJson()) {
 

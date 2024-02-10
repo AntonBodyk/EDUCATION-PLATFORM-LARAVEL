@@ -6,10 +6,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
+use App\Mail\WelcomeMail;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpSpreadsheet\Calculation\Logical\Boolean;
 use function Symfony\Component\String\u;
@@ -77,6 +79,8 @@ class UserController extends Controller
 
             $new_user->update(['avatar' => $path]);
         }
+
+        Mail::to($new_user->email)->send(new WelcomeMail($new_user));
 
         return redirect()->route('users.index');
     }
