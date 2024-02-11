@@ -55,8 +55,15 @@ class CourseController extends Controller
     public function search(Request $request): object
     {
         $query = $request->get('searchQuery', '');
+        $userId = $request->get('userId', null);
 
         $coursesQuery = Course::where('title', 'like', "%$query%");
+
+        if ($userId !== null) {
+            $coursesQuery->whereHas('students', function ($query) use ($userId) {
+                $query->where('user_id', $userId);
+            });
+        }
 
         $courses = $coursesQuery->get();
 

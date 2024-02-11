@@ -39,10 +39,6 @@
                             <a class="fa-solid fa-plus" href="{{route('courses.create')}}"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('lessons.index')}}">Уроки</a>
-                            <a class="fa-solid fa-plus" href="{{route('lessons.create')}}"></a>
-                        </li>
-                        <li class="nav-item">
                             <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
                         </li>
                         <li class="nav-item">
@@ -54,10 +50,6 @@
                                 <button type="submit" class="logout-btn">Вихід</button>
                             </form>
                         </li>
-                        @else
-                            <li class="nav-item">
-                                <a href="{{route('login')}}" class="nav-link nav-login">Вхід</a>
-                            </li>
                     @endif
                 @endauth
             </ul>

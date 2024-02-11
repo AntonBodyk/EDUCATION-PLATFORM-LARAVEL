@@ -38,33 +38,7 @@ class LessonController extends Controller
      */
     public function store(CreateLessonRequest $request):object
     {
-        if (!$request->expectsJson()) {
-            $currentUser = Auth::user();
-            $lessonData = array_merge($request->except('course_img'), ['teacher_id' => $currentUser->id]);
 
-            $lessonData['title'] = mb_convert_case($lessonData['title'], MB_CASE_TITLE, 'UTF-8');
-            $lessonData['description'] = mb_convert_case($lessonData['description'], MB_CASE_TITLE, 'UTF-8');
-
-            $new_lesson = Lesson::create($lessonData);
-
-            if ($request->hasFile('lesson_video')) {
-                $lesson_video = $request->file('lesson_video');
-
-                $path = $lesson_video->store('lesson_videos');
-
-                $new_lesson->update(['lesson_video' => $path]);
-            }
-
-            if ($request->hasFile('lesson_exercise')) {
-                $lesson_exercise = $request->file('lesson_exercise');
-
-                $path = $lesson_exercise->store('lesson_exercises');
-
-                $new_lesson->update(['lesson_exercise' => $path]);
-            }
-
-            return redirect()->route('lessons.index');
-        } else {
             $currentUserId = $request->input('teacher_id');
             $currentCourseId = $request->input('course_id');
             $lessonData = array_merge($request->except('course_img'), ['teacher_id' => $currentUserId, 'course_id' => $currentCourseId]);
@@ -91,7 +65,6 @@ class LessonController extends Controller
             }
             return response()->json(['new_course' => $new_lesson, 'message' => 'Create successfully'], 200);
         }
-    }
     /**
      * Display the specified resource.
      */

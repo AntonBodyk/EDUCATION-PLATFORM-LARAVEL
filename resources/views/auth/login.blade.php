@@ -25,7 +25,7 @@
             @enderror
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                <input type="password" class="form-control @error('emails') is-invalid @enderror" id="exampleInputPassword1" name="password" value="{{old('password')}}">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1" name="password" value="{{old('password')}}">
             </div>
             @error('password')
                 <div class="alert alert-danger">{{ $message }}</div>
