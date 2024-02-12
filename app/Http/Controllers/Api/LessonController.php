@@ -1,17 +1,15 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateLessonRequest;
 use App\Http\Requests\UpdateLessonRequest;
 use App\Http\Resources\LessonResource;
 use App\Models\Lesson;
-use App\Models\User;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class LessonController extends Controller
 {

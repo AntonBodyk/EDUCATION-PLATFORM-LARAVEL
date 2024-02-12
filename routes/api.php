@@ -1,15 +1,16 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\LessonController;
+use App\Http\Controllers\Api\RatingController;
+use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollCourseController;
+use App\Http\Controllers\Api\ReportController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\RoleController;
-use App\Http\Controllers\Api\CategoryController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\Api\RatingController;
-use App\Http\Controllers\LessonController;
-use App\Http\Controllers\EnrollCourseController;
 
 
 /*
@@ -34,6 +35,7 @@ Route::get('/courses/search', [CourseController::class, 'search']);
 Route::get('/categories/{category}/courses', [CategoryController::class, 'getCoursesByCategory']);
 Route::post('/courses/{courseId}/rate', [RatingController::class, 'rateCourse']);
 Route::get('/courses/{id}/lessons', [CourseController::class, 'lessons']);
+Route::post('/generate-report', [ReportController::class, 'generateReport']);
 
 Route::resources([
     'roles'=> RoleController::class,
