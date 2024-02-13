@@ -25,6 +25,13 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="mb-3">
+            <label for="exampleInputPrice1" class="form-label">Ціна</label>
+            <input name="course_price" type="text" class="form-control @error('course_price') is-invalid @enderror" id="exampleInputPrice1" value="{{ old('course_price') }}">
+        </div>
+        @error('course_price')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <div class="mb-3">
             <label for="exampleInputCategory1" class="form-label">Категорія курсу</label>
             <select name="category_id" class="form-select @error('category_id') is-invalid @enderror" id="exampleInputCategory1">
                 <option value="" selected disabled>Виберіть категорію</option>

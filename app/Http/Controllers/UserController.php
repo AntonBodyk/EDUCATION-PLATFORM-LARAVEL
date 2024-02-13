@@ -70,17 +70,19 @@ class UserController extends Controller
         $data['second_name'] = mb_convert_case($data['second_name'], MB_CASE_TITLE, 'UTF-8');
         $data['last_name'] = mb_convert_case($data['last_name'], MB_CASE_TITLE, 'UTF-8');
 
-        $new_user = User::create($data);
+
 
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
 
             $path = $avatar->store('avatars');
 
-            $new_user->update(['avatar' => $path]);
+            $data['avatar'] = $path;
         }
 
-        Mail::to($new_user->email)->send(new WelcomeMail($new_user));
+        $new_user = User::create($data);
+
+        Mail::to($new_user->email)->send(new WelcomeMail($new_user, $data['password']));
 
         return redirect()->route('users.index');
     }

@@ -15,10 +15,10 @@ class WelcomeMail extends Mailable
     public $email;
     public $password;
 
-    public function __construct(User $user)
+    public function __construct(User $user, string $password)
     {
         $this->email = $user->email;
-        $this->password = $user->password;
+        $this->password = $password;
     }
 
     public function build()
