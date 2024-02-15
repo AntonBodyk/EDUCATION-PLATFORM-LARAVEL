@@ -30,17 +30,21 @@
                 @endguest
                 @auth()
                     @if(auth()->user()->role_id === 1)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('users.index')}}">Користувачі</a>
+                        <li class="nav-item users-block">
+                            <a class="nav-link users-link" href="{{route('users.index')}}">Користувачі</a>
                             <a class="fa-solid fa-user-plus" href="{{route('users.create')}}"></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('courses.index')}}">Курси</a>
+                        <li class="nav-item courses-block">
+                            <a class="nav-link courses-link" href="{{route('courses.index')}}">Курси</a>
                             <a class="fa-solid fa-plus" href="{{route('courses.create')}}"></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="fa-solid fa-file-arrow-down" href="{{route('export-users')}}"></a>
-                        </li>
+                            <form action="{{ route('users.search')}}" method="post">
+                                @csrf
+                                <div class="input-group mb-3 search">
+                                    <input type="text" class="form-control" name="search" placeholder="Пошук" aria-label="Пошук" aria-describedby="basic-addon2">
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Пошук</button>
+                                </div>
+                            </form>
                         <li class="nav-item">
                             <span class="hello-user">Доброго дня, {{auth()->user()->first_name}}!</span>
                         </li>

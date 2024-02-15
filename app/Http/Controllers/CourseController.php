@@ -56,12 +56,19 @@ class CourseController extends Controller
     {
         $query = $request->get('searchQuery', '');
         $userId = $request->get('userId', null);
+        $categoryId = $request->get('categoryId', null);
 
         $coursesQuery = Course::where('title', 'like', "%$query%");
 
         if ($userId !== null) {
             $coursesQuery->whereHas('students', function ($query) use ($userId) {
                 $query->where('user_id', $userId);
+            });
+        }
+
+        if ($categoryId !== null) {
+            $coursesQuery->whereHas('category', function ($query) use ($categoryId) {
+                $query->where('id', $categoryId);
             });
         }
 

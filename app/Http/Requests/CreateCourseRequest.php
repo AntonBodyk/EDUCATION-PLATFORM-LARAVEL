@@ -26,7 +26,7 @@ class CreateCourseRequest extends FormRequest
             'course_img' => 'required|image:jpg,jpeg,png',
             'body'=> "required|min:3|max:500|regex:/^[\p{Lu}\p{L}0-9\s, '.-]+$/u",
             'category_id' => 'required',
-            'course_price'=> 'required'
+            'course_price'=> 'required|regex:/^\d+\.\d{2}$/'
         ];
     }
 
@@ -44,7 +44,8 @@ class CreateCourseRequest extends FormRequest
             'course_img'=> 'Не вірний тип файлу, додайте файл типу:jpg,jpeg,png',
             'title.regex'=> 'Назва повинна починатися з великої літери',
             'body.regex'=> 'Опис повинен починатися з великої літери',
-            'course_price.required' => 'Заповніть поле'
+            'course_price.required' => 'Заповніть поле',
+            'course_price.regex'=> 'Введіть десяткове число'
         ];
     }
 }

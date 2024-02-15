@@ -6,30 +6,28 @@
             <thead>
             <tr>
                 <th>
-                    <a class="th-link-id" href="{{ route('users.index', ['sortColumn' => 'id', 'sortDirection' => $sortColumn === 'id' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                        Id
+                    <a class="th-link-surname" href="{{ route('users.index', ['sortColumn' => 'second_name', 'sortDirection' => $sortColumn === 'second_name' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
+                        Прізвище
                     </a>
                 </th>
-                <th>Surname</th>
                 <th>
                     <a class="th-link-name" href="{{ route('users.index', ['sortColumn' => 'first_name', 'sortDirection' => $sortColumn === 'first_name' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                        Name
+                        Ім'я
                     </a>
                 </th>
-                <th>Last_name</th>
+                <th>По батькові</th>
                 <th>
                     <a class="th-link-email" href="{{ route('users.index', ['sortColumn' => 'email', 'sortDirection' => $sortColumn === 'email' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                        Email
+                        Ел.пошта
                     </a>
                 </th>
-                <th>Role</th>
+                <th>Статус</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach($users as $user)
                 <tr class="tr-users">
-                    <td class="td-id">{{$user->id}}</td>
                     <td class="td-name">{{$user->second_name}}</td>
                     <td class="td-name">{{$user->first_name}}</td>
                     <td class="td-name">{{$user->last_name}}</td>

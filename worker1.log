@@ -1,0 +1,2090 @@
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   InvalidArgumentException 
+
+  Driver [pusher] is not supported.
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:259
+    255▕ 
+    256▕         $driverMethod = 'create'.ucfirst($config['driver']).'Driver';
+    257▕ 
+    258▕         if (! method_exists($this, $driverMethod)) {
+  ➜ 259▕             throw new InvalidArgumentException("Driver [{$config['driver']}] is not supported.");
+    260▕         }
+    261▕ 
+    262▕         return $this->{$driverMethod}($config);
+    263▕     }
+
+      [2m+4 vendor frames [22m
+
+  5   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  6   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+   Error 
+
+  Class "Pusher\Pusher" not found
+
+  at /mnt/c/internship/laravel-projects/education-platform-laravel/vendor/laravel/framework/src/Illuminate/Broadcasting/BroadcastManager.php:295
+    291▕      * @return \Pusher\Pusher
+    292▕      */
+    293▕     public function pusher(array $config)
+    294▕     {
+  ➜ 295▕         $pusher = new Pusher(
+    296▕             $config['key'],
+    297▕             $config['secret'],
+    298▕             $config['app_id'],
+    299▕             $config['options'] ?? [],
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+
+
+      [2m+6 vendor frames [22m
+
+  7   /mnt/c/internship/laravel-projects/education-platform-laravel/routes/channels.php:16
+      Illuminate\Support\Facades\Facade::__callStatic()
+  8   /mnt/c/internship/laravel-projects/education-platform-laravel/app/Providers/BroadcastServiceProvider.php:17
+

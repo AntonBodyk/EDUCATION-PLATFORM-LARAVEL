@@ -52,7 +52,19 @@
                 <option value="" selected disabled>Виберіть роль</option>
                 @foreach($roles as $role)
                     <option value="{{ $role->id }}" {{ $role === $role->id ? 'selected' : '' }}>
-                        {{ $role->role_name }}
+                        @switch($role->role_name)
+                            @case('admin')
+                                Адмін
+                                @break
+                            @case('teacher')
+                                Вчитель
+                                @break
+                            @case('student')
+                                Учень
+                                @break
+                            @default
+                                {{ $role->role_name }}
+                        @endswitch
                     </option>
                 @endforeach
             </select>

@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\PdfGenerated;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Bus\Queueable;
@@ -11,7 +12,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
-use Pusher\Pusher;
+use Illuminate\Support\Facades\Storage;
+
 
 class TeacherReport implements ShouldQueue
 {
@@ -32,23 +34,19 @@ class TeacherReport implements ShouldQueue
      */
     public function handle()
     {
-
         $teacher = User::findOrFail($this->teacherId);
-        $teacherCourses = $teacher->authoredCourses;
-        $teacherCoursesCount = $teacher->authoredCourses->count();
 
-        $pdf = Pdf::loadView('pdf.report', ['teacher'=> $teacherCourses]);
 
-        $pdfContent = $pdf->output();
 
-        try {
-            // Отправьте содержимое PDF-файла через Pusher
-            $pusher = new Pusher('5af85efcf93524328676', '4f1608a5f03a18405750', '1755270');
-            $pusher->trigger('teacher_report', 'teacher_report_generated', ['content' => $pdfContent]);
-        } catch (\Exception $e) {
-            Log::error('Failed to send PDF content via Pusher: ' . $e->getMessage());
+            $pdf = Pdf::loadView('pdf.report');
+
+            $pdfContent = $pdf->output();
+
+            $pdfPath = 'pdfs/' . now()->format('Ymd_His') . '_teacher_report.pdf';
+            Storage::put($pdfPath, $pdfContent);
+
+            $pdfUrl = Storage::url($pdfPath);
+            event(new PdfGenerated($pdfUrl));
         }
 
-
-    }
 }

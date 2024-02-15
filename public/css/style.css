@@ -1,5 +1,6 @@
 .navbar{
     display: flex;
+    font-family: "Rubik", sans-serif;
 }
 .nav-item a{
     color: white;
@@ -58,6 +59,7 @@
     cursor: pointer;
     padding-top: 14px;
     text-decoration: none;
+    margin-right: 30px;
 }
 
 .create-user{
@@ -94,6 +96,7 @@
     color: black;
 }
 .th-link-title{
+    margin-left: 90px;
     text-decoration: none;
     color: black;
 }
@@ -183,16 +186,6 @@
     height: 20px;
     color: white;
 }
-.send-email{
-    width: 700px;
-    margin: 150px 0 0 27%;
-}
-.send-email-btn{
-    width: 200px;
-    height: 50px;
-    color: white;
-    margin-left: 37%;
-}
 .fa-right-from-bracket{
     text-decoration: none;
     width: 30px;
@@ -206,7 +199,7 @@
     width: 80px;
     height: 30px;
     font-weight: bold;
-    margin: 15px 0 0 30px;
+    margin: 10px 0 0 30px;
     background-color: white;
     color: #1a202c;
     border-radius: 5px;
@@ -245,12 +238,35 @@
 }
 .hello-user{
     color: white;
-    margin-top: 14px;
+    margin-top: 7px;
     font-family: "Rubik", sans-serif;
 }
 td:first-child {
     padding-left: 100px;
 }
-.th-link-id{
-    margin-left:87px;
+.th-link-surname{
+    margin-left: 87px;
+    text-decoration: none;
+    color: black;
+}
+
+.th-link-surname:hover{
+    color: black;
+}
+.search{
+    width: 400px;
+    margin: 20px 0 60px 0;
+}
+.courses-block{
+    margin-right: 30px;
+}
+.users-block{
+    margin-left: -50px;
+}
+
+.users-link{
+    margin-top: 1px;
+}
+.courses-link{
+    margin-top: 1px;
 }

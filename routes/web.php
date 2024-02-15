@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\EmailController;
+
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\UserController;
-use App\Mail\ExelMail;
+use App\Events\Hello;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +23,7 @@ Route::get('/', function () {
     return view('admin');
 })->name('admin');
 
-Route::post('/send-emails', [EmailController::class, 'sendUserEmail'])->name('send-emails')->middleware('auth', 'admin');
-
-Route::get('/export-users', [ExportController::class, 'exportUsers'])->name('export-users')->middleware('auth', 'admin');
-
+Route::post('/users/search', [UserController::class, 'search'])->name('users.search')->middleware('auth','admin');
 
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('auth','admin');

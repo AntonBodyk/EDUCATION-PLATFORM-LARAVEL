@@ -6,28 +6,22 @@
             <thead>
             <tr>
                 <th>
-                    <a class="th-link-id" href="{{ route('courses.index', ['sortColumn' => 'id', 'sortDirection' => $sortColumn === 'id' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                        Id
-                    </a>
-                </th>
-                <th>
                     <a class="th-link-title" href="{{ route('courses.index', ['sortColumn' => 'title', 'sortDirection' => $sortColumn === 'title' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                        Title
+                        Назва
                     </a>
                 </th>
                 <th>
                     <a class="th-link-body" href="{{ route('courses.index', ['sortColumn' => 'body', 'sortDirection' => $sortColumn === 'body' && $sortDirection === 'asc' ? 'desc' : 'asc']) }}">
-                        Body
+                        Опис
                     </a>
                 </th>
-                <th>Category</th>
+                <th>Категорія</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach($courses as $course)
                 <tr class="tr-courses">
-                    <td class="td-id">{{$course->id}}</td>
                     <td class="td-avatar">{{$course->title}}</td>
                     <td class="td-email">{{$course->body}}</td>
                     <td class="td-role">

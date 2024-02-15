@@ -23,12 +23,12 @@ class UserController extends Controller
      */
     public function index(Request $request): object
     {
-        $sortColumn = $request->get('sortColumn', 'id');
+        $sortColumn = $request->get('sortColumn', 'second_name');
         $sortDirection = $request->get('sortDirection', 'asc');
 
-        $validColumns = ['id', 'first_name', 'emails', 'role'];
+        $validColumns = ['second_name', 'first_name', 'email', 'role'];
         if (!in_array($sortColumn, $validColumns)) {
-            $sortColumn = 'first_name';
+            $sortColumn = 'second_name';
         }
 
         $usersQuery = User::orderBy($sortColumn, $sortDirection);
@@ -44,6 +44,39 @@ class UserController extends Controller
         if ($request->input('page') > $users->lastPage()) {
             abort(404);
         }
+
+        return view('users.index', compact('users', 'sortColumn', 'sortDirection'));
+    }
+
+    public function search(Request $request): object
+    {
+        $search = $request->input('search');
+        $sortColumn = $request->get('sortColumn', 'second_name');
+        $sortDirection = $request->get('sortDirection', 'asc');
+
+        $validColumns = ['second_name', 'first_name', 'email', 'role'];
+        if (!in_array($sortColumn, $validColumns)) {
+            $sortColumn = 'second_name';
+        }
+
+        $usersQuery = User::orderBy($sortColumn, $sortDirection);
+
+        if (!empty($search)) {
+            $searchTerms = explode(' ', $search);
+
+            $usersQuery->where(function ($query) use ($searchTerms) {
+                foreach ($searchTerms as $term) {
+                    $query->where(function ($query) use ($term) {
+                        $query->where('first_name', 'like', "%$term%")
+                            ->orWhere('second_name', 'like', "%$term%")
+                            ->orWhere('last_name', 'like', "%$term%")
+                            ->orWhere('email', 'like', "%$term%");
+                    });
+                }
+            });
+        }
+
+        $users = $usersQuery->paginate(50);
 
         return view('users.index', compact('users', 'sortColumn', 'sortDirection'));
     }

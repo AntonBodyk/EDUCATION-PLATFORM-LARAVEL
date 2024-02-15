@@ -15,16 +15,10 @@ class ReportController extends Controller
     public function generateReport(Request $request): object
     {
         $teacherId = $request->input('teacherId');
-        // Добавление задачи в очередь на генерацию отчета
+
         TeacherReport::dispatch($teacherId);
 
-        // Отправка сообщения через WebSocket о начале генерации отчета
-        Broadcast::channel('reportGeneration', function () {
-            return ['message' => 'Report generation has been initiated15'];
-        });
 
-
-        // Возвращаем ответ клиенту
         return response()->json(['message' => 'Report generation has been initiated']);
     }
 }
