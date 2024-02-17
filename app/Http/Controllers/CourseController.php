@@ -39,7 +39,8 @@ class CourseController extends Controller
         }
 
 
-        $courses = $coursesQuery->paginate(50);
+        $courses = $coursesQuery->with('category')->paginate(50);
+
 
         if ($request->input('page') > $courses->lastPage()) {
             abort(404);

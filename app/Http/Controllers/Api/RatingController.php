@@ -14,7 +14,6 @@ class RatingController extends Controller
     {
         $userId = $request->input('user_id');
 
-        // Проверяем, оценивал ли пользователь уже этот курс
         $existingRating = CourseRating::where('user_id', $userId)
             ->where('course_id', $courseId)
             ->first();
@@ -23,7 +22,7 @@ class RatingController extends Controller
             return response()->json(['message' => 'Вы уже оценили этот курс'], 422);
         }
 
-        // Создаем новую оценку
+
         $rating = new CourseRating([
             'user_id' => $userId,
             'course_id' => $courseId,
@@ -32,7 +31,7 @@ class RatingController extends Controller
 
         $rating->save();
 
-        // Обновляем средний рейтинг курса
+
         $averageRating = CourseRating::where('course_id', $courseId)->avg('course_rating');
         $course = Course::find($courseId);
         $course->average_rating = $averageRating;

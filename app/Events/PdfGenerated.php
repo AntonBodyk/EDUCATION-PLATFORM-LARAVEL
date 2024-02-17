@@ -18,6 +18,12 @@ class PdfGenerated implements ShouldBroadcast
         $this->pdfUrl = $pdfUrl;
     }
 
+    public function broadcastWith()
+    {
+        //echo"broadcastWith";
+        return  ['welcome'=>'welcome to the club'];
+    }
+
     public function broadcastOn()
     {
         return new Channel('reportGeneration');

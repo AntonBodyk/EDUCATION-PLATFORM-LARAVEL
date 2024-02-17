@@ -25,13 +25,12 @@ class EnrollCourseController extends Controller
             return response()->json(['error' => 'User not found'], 404);
         }
 
-        // Получаем курсы, к которым пользователь был записан
+
 
         $enrolledCourses = $user->enrolledCourses()->get();
 
         $coursesResource = CourseResource::collection($enrolledCourses);
 
-        // Возвращаем данные
         return response()->json(['enrolledCourses' => $coursesResource], 200);
     }
 
@@ -44,19 +43,19 @@ class EnrollCourseController extends Controller
         $userId = $request->input('user_id');
         $courseIds = $request->input('course_ids');
 
-        // Проверяем, существует ли пользователь с указанным ID
+
         $user = User::find($userId);
         if (!$user) {
             return response()->json(['error' => 'User not found'], 404);
         }
 
-        // Проверяем, существуют ли курсы с указанными ID
+
         $courses = Course::whereIn('id', $courseIds)->get();
         if ($courses->count() !== count($courseIds)) {
             return response()->json(['error' => 'One or more courses not found'], 404);
         }
 
-        // Присоединяем выбранные курсы к пользователю
+
         $user->enrolledCourses()->syncWithoutDetaching($courseIds);
 
         return response()->json(['message' => 'Courses enrolled successfully'], 200);

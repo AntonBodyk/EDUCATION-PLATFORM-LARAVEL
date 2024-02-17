@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Events\PdfGenerated;
+use App\Http\Controllers\Api\ReportController;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Bus\Queueable;
@@ -46,7 +47,8 @@ class TeacherReport implements ShouldQueue
             Storage::put($pdfPath, $pdfContent);
 
             $pdfUrl = Storage::url($pdfPath);
-            event(new PdfGenerated($pdfUrl));
+
+
         }
 
 }

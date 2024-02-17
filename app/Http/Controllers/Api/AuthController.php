@@ -50,7 +50,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->input('password'))
         ]);
 
-        Mail::to($user->email)->send(new WelcomeMail($user));
+        Mail::to($user->email)->send(new WelcomeMail($user, $request->password));
 
         return response()->json([
             'status' => true,

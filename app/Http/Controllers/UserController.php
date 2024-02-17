@@ -113,6 +113,7 @@ class UserController extends Controller
             $data['avatar'] = $path;
         }
 
+
         $new_user = User::create($data);
 
         Mail::to($new_user->email)->send(new WelcomeMail($new_user, $data['password']));
