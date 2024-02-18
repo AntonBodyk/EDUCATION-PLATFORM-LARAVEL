@@ -11,4 +11,9 @@ class Test extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function questions(): object
+    {
+        return $this->hasMany(Question::class, 'test_id', 'id');
+    }
 }

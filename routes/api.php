@@ -9,6 +9,9 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollCourseController;
 use App\Http\Controllers\Api\ReportController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Api\TestController;
+use App\Http\Controllers\Api\QuestionController;
+use App\Http\Controllers\Api\AnswerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Broadcast;
@@ -46,5 +49,8 @@ Route::resources([
     'categories'=> CategoryController::class,
     'courses'=> CourseController::class,
     'lessons'=> LessonController::class,
-    'enroll-courses' => EnrollCourseController::class
+    'enroll-courses' => EnrollCourseController::class,
+    'tests'=> TestController::class,
+    'questions'=> QuestionController::class,
+    'answers'=> AnswerController::class
 ]);

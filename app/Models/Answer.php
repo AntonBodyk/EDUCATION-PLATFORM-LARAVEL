@@ -11,4 +11,9 @@ class Answer extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function question(): object
+    {
+        return $this->belongsTo(Question::class);
+    }
 }
