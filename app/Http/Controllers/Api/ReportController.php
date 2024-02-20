@@ -17,19 +17,16 @@ class ReportController extends Controller
 
     public function generateReport(Request $request)
     {
-        $pusher = new Pusher(
-            env('PUSHER_APP_KEY'),
-            env('PUSHER_APP_SECRET'),
-            env('PUSHER_APP_ID'),
-            [
-                'cluster' => env('PUSHER_APP_CLUSTER'),
-                'useTLS' => true
-            ]
-        );
+        $user = $request->user();
+        if ($user) {
+            // Диспетчеризация задания
+            $teacherReport = TeacherReport::dispatch($user)->onQueue('default');
 
-        $pusher->trigger('reportGeneration', 'PdfGenerated ', ['message' => 'Hello message sent']);
 
-        \Illuminate\Support\Facades\Log::info('Report generation event sent.');
-        return response()->json(['message' => 'Report generated successfully'], 200);
+
+            return response()->json(['message' => 'Report generated successfully'], 200);
+        } else {
+            return response()->json(['message' => 'User not authenticated'], 401);
+        }
     }
 }

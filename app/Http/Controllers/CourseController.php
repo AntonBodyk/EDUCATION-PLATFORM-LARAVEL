@@ -7,8 +7,10 @@ use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Http\Resources\CourseResource;
 use App\Http\Resources\LessonResource;
+use App\Http\Resources\TestResource;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Test;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -138,6 +140,12 @@ class CourseController extends Controller
         return LessonResource::collection($lessons);
     }
 
+    public function tests(string $id): object
+    {
+        $course = Course::findOrFail($id);
+        $tests = $course->tests;
+        return TestResource::collection($tests);
+    }
     /**
      * Display the specified resource.
      */

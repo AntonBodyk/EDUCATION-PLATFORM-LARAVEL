@@ -32,6 +32,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')
+    ->group(function () {
+        Route::get('/generate-report', [ReportController::class, 'generateReport']);
+    });
+
 
 
 Route::post('/register', [AuthController::class, 'register']);
@@ -41,7 +46,7 @@ Route::get('/courses/search', [CourseController::class, 'search']);
 Route::get('/categories/{category}/courses', [CategoryController::class, 'getCoursesByCategory']);
 Route::post('/courses/{courseId}/rate', [RatingController::class, 'rateCourse']);
 Route::get('/courses/{id}/lessons', [CourseController::class, 'lessons']);
-Route::post('/generate-report', [ReportController::class, 'generateReport']);
+Route::get('/courses/{id}/tests', [CourseController::class, 'tests']);
 
 Route::resources([
     'roles'=> RoleController::class,

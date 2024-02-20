@@ -15,6 +15,11 @@ class Course extends Model
     {
         return $this->hasMany(Lesson::class, 'course_id', 'id');
     }
+
+    public function tests():object
+    {
+        return $this->hasMany(Test::class, 'course_id', 'id');
+    }
     public function category(): object
     {
         return $this->belongsTo(Category::class);
