@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\QuestionController;
 use App\Http\Controllers\Api\AnswerController;
+use App\Http\Controllers\Api\CompletedTestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Broadcast;
@@ -47,6 +48,7 @@ Route::get('/categories/{category}/courses', [CategoryController::class, 'getCou
 Route::post('/courses/{courseId}/rate', [RatingController::class, 'rateCourse']);
 Route::get('/courses/{id}/lessons', [CourseController::class, 'lessons']);
 Route::get('/courses/{id}/tests', [CourseController::class, 'tests']);
+Route::post('/tests/{testId}/submit-answer', [TestController::class, 'submit']);
 
 Route::resources([
     'roles'=> RoleController::class,
@@ -57,5 +59,6 @@ Route::resources([
     'enroll-courses' => EnrollCourseController::class,
     'tests'=> TestController::class,
     'questions'=> QuestionController::class,
-    'answers'=> AnswerController::class
+    'answers'=> AnswerController::class,
+    'completed-tests'=> CompletedTestController::class
 ]);
