@@ -21,6 +21,7 @@ class LessonResource extends JsonResource
             'title' => $this->title,
             'lesson_video_url' => Storage::url($this->lesson_video),
             'description' => $this->description,
+            'completed' => $this->completed,
             'lesson_exercise_url' => Storage::url($this->lesson_exercise),
             'teacher_id' => $this->teacher_id,
             'course_id' => $this->course_id,

@@ -180,8 +180,6 @@ class CourseController extends Controller
     {
         $course->delete();
 
-
-
         if ($request->expectsJson()) {
 
             return response()->json(['course' => $course, 'message' => 'Deleted successfully'], 200)

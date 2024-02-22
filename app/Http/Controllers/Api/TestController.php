@@ -73,7 +73,6 @@ class TestController extends Controller
             foreach ($correctAnswers as $correctAnswer) {
                 if ($correctAnswer->answer_text == $selectedAnswer) {
                     $correctCount++;
-                    break;
                 }
             }
         }
@@ -104,8 +103,17 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Test $test, Request $request): object
     {
-        //
+        $test->delete();
+
+        if ($request->expectsJson()) {
+
+            return response()->json(['lesson' => $test, 'message' => 'Deleted successfully'], 200)
+                ->header('Access-Control-Allow-Methods', 'DELETE')
+                ->header('Access-Control-Allow-Headers', 'Content-Type,API-Key');
+        }
+
+        return redirect()->route('lessons.index');
     }
 }
