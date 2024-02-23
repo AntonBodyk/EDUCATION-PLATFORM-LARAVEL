@@ -19,7 +19,6 @@ class ReportController extends Controller
     {
         $user = $request->user();
         if ($user) {
-            // Диспетчеризация задания
             $teacherReport = TeacherReport::dispatch($user)->onQueue('default');
 
 

@@ -41,25 +41,20 @@ class TeacherReport implements ShouldQueue
     public function handle()
     {
 
-//        $teacher = User::where('id', $this->teacher->id)->first();
-
-        // Получаем текущую дату и дату, предшествующую последней неделе
         $today = Carbon::today();
         $lastWeek = $today->copy()->subWeek();
 
 
-        // Получаем количество курсов, созданных учителем за последнюю неделю
         $coursesLastWeek = Course::where('author_id', $this->teacher->id)
             ->whereBetween('created_at', [$lastWeek, $today])
             ->count();
 
-        // Получаем количество курсов, созданных учителем за последний месяц
+
         $lastMonth = $today->copy()->subMonth();
         $coursesLastMonth = Course::where('author_id', $this->teacher->id)
             ->whereBetween('created_at', [$lastMonth, $today])
             ->count();
 
-        // Получаем общее количество курсов у учителя
         $totalCourses = $this->teacher->authoredCourses->count();
 
         $pdf = Pdf::loadView('pdf.report', [
